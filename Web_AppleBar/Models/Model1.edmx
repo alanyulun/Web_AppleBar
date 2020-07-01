@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AppleBar_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AppleRecycle_IPad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Herf" Type="nchar" MaxLength="10" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ImgType" Type="varchar" MaxLength="50" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AppleRecycle_IPhone">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Herf" Type="nchar" MaxLength="10" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ImgType" Type="varchar" MaxLength="50" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AppleRecycle_Mac">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Herf" Type="nchar" MaxLength="10" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ImgType" Type="varchar" MaxLength="50" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'AppleBar_db.dbo.IPhoneRepair_BatteryRepaire' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="IPhoneRepair_BatteryRepaire">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Contents" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'AppleBar_db.dbo.IPhoneRepair_BoardRepair' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="IPhoneRepair_BoardRepair">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Contents" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ImgType" Type="varchar" MaxLength="50" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'AppleBar_db.dbo.IPhoneRepair_SoakingRepair' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="IPhoneRepair_SoakingRepair">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Contents" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'AppleBar_db.dbo.MacBookRepair_SoakingRepair' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="MacBookRepair_SoakingRepair">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Contents" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ImgType" Type="varchar" MaxLength="50" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Navigation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="URL" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Img" Type="varchar(max)" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RepairCase_IPad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RepairCase_IPhone">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RepairePriceInfo_Board">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RepairePriceInfo_HomeDelivery">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RepairePriceInfo_Mac">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RepairPriceInfo_IPhone">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="RrpairCase_Board">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Contents" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--產生期間發現錯誤:
+警告 6002: 資料表/檢視 'AppleBar_db.dbo.SubNavigation' 未定義主索引鍵。已推斷此索引鍵，並將定義建立成唯讀的資料表/檢視。-->
+        <EntityType Name="SubNavigation">
+          <Key>
+            <PropertyRef Name="NavID" />
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="NavID" Type="varchar(max)" Nullable="false" />
+          <Property Name="ID" Type="varchar(max)" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="URL" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="AppleBar_dbModelStoreContainer">
+          <EntitySet Name="AppleRecycle_IPad" EntityType="Self.AppleRecycle_IPad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppleRecycle_IPhone" EntityType="Self.AppleRecycle_IPhone" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppleRecycle_Mac" EntityType="Self.AppleRecycle_Mac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Navigation" EntityType="Self.Navigation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RepairCase_IPad" EntityType="Self.RepairCase_IPad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RepairCase_IPhone" EntityType="Self.RepairCase_IPhone" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RepairePriceInfo_Board" EntityType="Self.RepairePriceInfo_Board" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RepairePriceInfo_HomeDelivery" EntityType="Self.RepairePriceInfo_HomeDelivery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RepairePriceInfo_Mac" EntityType="Self.RepairePriceInfo_Mac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RepairPriceInfo_IPhone" EntityType="Self.RepairPriceInfo_IPhone" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RrpairCase_Board" EntityType="Self.RrpairCase_Board" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="IPhoneRepair_BatteryRepaire" EntityType="Self.IPhoneRepair_BatteryRepaire" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [IPhoneRepair_BatteryRepaire].[ID] AS [ID], 
+    [IPhoneRepair_BatteryRepaire].[Title] AS [Title], 
+    [IPhoneRepair_BatteryRepaire].[Contents] AS [Contents], 
+    [IPhoneRepair_BatteryRepaire].[Img] AS [Img]
+    FROM [dbo].[IPhoneRepair_BatteryRepaire] AS [IPhoneRepair_BatteryRepaire]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="IPhoneRepair_BoardRepair" EntityType="Self.IPhoneRepair_BoardRepair" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [IPhoneRepair_BoardRepair].[ID] AS [ID], 
+    [IPhoneRepair_BoardRepair].[Title] AS [Title], 
+    [IPhoneRepair_BoardRepair].[Contents] AS [Contents], 
+    [IPhoneRepair_BoardRepair].[ImgType] AS [ImgType], 
+    [IPhoneRepair_BoardRepair].[Img] AS [Img]
+    FROM [dbo].[IPhoneRepair_BoardRepair] AS [IPhoneRepair_BoardRepair]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="IPhoneRepair_SoakingRepair" EntityType="Self.IPhoneRepair_SoakingRepair" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [IPhoneRepair_SoakingRepair].[ID] AS [ID], 
+    [IPhoneRepair_SoakingRepair].[Title] AS [Title], 
+    [IPhoneRepair_SoakingRepair].[Contents] AS [Contents], 
+    [IPhoneRepair_SoakingRepair].[Img] AS [Img]
+    FROM [dbo].[IPhoneRepair_SoakingRepair] AS [IPhoneRepair_SoakingRepair]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MacBookRepair_SoakingRepair" EntityType="Self.MacBookRepair_SoakingRepair" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [MacBookRepair_SoakingRepair].[ID] AS [ID], 
+    [MacBookRepair_SoakingRepair].[Title] AS [Title], 
+    [MacBookRepair_SoakingRepair].[Contents] AS [Contents], 
+    [MacBookRepair_SoakingRepair].[ImgType] AS [ImgType], 
+    [MacBookRepair_SoakingRepair].[Img] AS [Img]
+    FROM [dbo].[MacBookRepair_SoakingRepair] AS [MacBookRepair_SoakingRepair]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SubNavigation" EntityType="Self.SubNavigation" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SubNavigation].[NavID] AS [NavID], 
+    [SubNavigation].[ID] AS [ID], 
+    [SubNavigation].[Name] AS [Name], 
+    [SubNavigation].[URL] AS [URL]
+    FROM [dbo].[SubNavigation] AS [SubNavigation]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AppleBar_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AppleRecycle_IPad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Herf" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImgType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AppleRecycle_IPhone">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Herf" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImgType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AppleRecycle_Mac">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Herf" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImgType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Navigation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="URL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Img" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="RepairCase_IPad">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RepairCase_IPhone">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RepairePriceInfo_Board">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RepairePriceInfo_HomeDelivery">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RepairePriceInfo_Mac">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RepairPriceInfo_IPhone">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RrpairCase_Board">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IPhoneRepair_BatteryRepaire">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Contents" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IPhoneRepair_BoardRepair">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Contents" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImgType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IPhoneRepair_SoakingRepair">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Contents" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MacBookRepair_SoakingRepair">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Title" />
+            <PropertyRef Name="Contents" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ImgType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SubNavigation">
+          <Key>
+            <PropertyRef Name="NavID" />
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="NavID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="URL" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="AppleBar_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AppleRecycle_IPad" EntityType="Self.AppleRecycle_IPad" />
+          <EntitySet Name="AppleRecycle_IPhone" EntityType="Self.AppleRecycle_IPhone" />
+          <EntitySet Name="AppleRecycle_Mac" EntityType="Self.AppleRecycle_Mac" />
+          <EntitySet Name="Navigation" EntityType="Self.Navigation" />
+          <EntitySet Name="News" EntityType="Self.News" />
+          <EntitySet Name="RepairCase_IPad" EntityType="Self.RepairCase_IPad" />
+          <EntitySet Name="RepairCase_IPhone" EntityType="Self.RepairCase_IPhone" />
+          <EntitySet Name="RepairePriceInfo_Board" EntityType="Self.RepairePriceInfo_Board" />
+          <EntitySet Name="RepairePriceInfo_HomeDelivery" EntityType="Self.RepairePriceInfo_HomeDelivery" />
+          <EntitySet Name="RepairePriceInfo_Mac" EntityType="Self.RepairePriceInfo_Mac" />
+          <EntitySet Name="RepairPriceInfo_IPhone" EntityType="Self.RepairPriceInfo_IPhone" />
+          <EntitySet Name="RrpairCase_Board" EntityType="Self.RrpairCase_Board" />
+          <EntitySet Name="IPhoneRepair_BatteryRepaire" EntityType="Self.IPhoneRepair_BatteryRepaire" />
+          <EntitySet Name="IPhoneRepair_BoardRepair" EntityType="Self.IPhoneRepair_BoardRepair" />
+          <EntitySet Name="IPhoneRepair_SoakingRepair" EntityType="Self.IPhoneRepair_SoakingRepair" />
+          <EntitySet Name="MacBookRepair_SoakingRepair" EntityType="Self.MacBookRepair_SoakingRepair" />
+          <EntitySet Name="SubNavigation" EntityType="Self.SubNavigation" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AppleBar_dbModelStoreContainer" CdmEntityContainer="AppleBar_dbEntities">
+          <EntitySetMapping Name="AppleRecycle_IPad">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.AppleRecycle_IPad">
+              <MappingFragment StoreEntitySet="AppleRecycle_IPad">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Herf" ColumnName="Herf" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="ImgType" ColumnName="ImgType" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppleRecycle_IPhone">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.AppleRecycle_IPhone">
+              <MappingFragment StoreEntitySet="AppleRecycle_IPhone">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Herf" ColumnName="Herf" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="ImgType" ColumnName="ImgType" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppleRecycle_Mac">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.AppleRecycle_Mac">
+              <MappingFragment StoreEntitySet="AppleRecycle_Mac">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Herf" ColumnName="Herf" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="ImgType" ColumnName="ImgType" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Navigation">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.Navigation">
+              <MappingFragment StoreEntitySet="Navigation">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RepairCase_IPad">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.RepairCase_IPad">
+              <MappingFragment StoreEntitySet="RepairCase_IPad">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RepairCase_IPhone">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.RepairCase_IPhone">
+              <MappingFragment StoreEntitySet="RepairCase_IPhone">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RepairePriceInfo_Board">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.RepairePriceInfo_Board">
+              <MappingFragment StoreEntitySet="RepairePriceInfo_Board">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RepairePriceInfo_HomeDelivery">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.RepairePriceInfo_HomeDelivery">
+              <MappingFragment StoreEntitySet="RepairePriceInfo_HomeDelivery">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RepairePriceInfo_Mac">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.RepairePriceInfo_Mac">
+              <MappingFragment StoreEntitySet="RepairePriceInfo_Mac">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RepairPriceInfo_IPhone">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.RepairPriceInfo_IPhone">
+              <MappingFragment StoreEntitySet="RepairPriceInfo_IPhone">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RrpairCase_Board">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.RrpairCase_Board">
+              <MappingFragment StoreEntitySet="RrpairCase_Board">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IPhoneRepair_BatteryRepaire">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.IPhoneRepair_BatteryRepaire">
+              <MappingFragment StoreEntitySet="IPhoneRepair_BatteryRepaire">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IPhoneRepair_BoardRepair">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.IPhoneRepair_BoardRepair">
+              <MappingFragment StoreEntitySet="IPhoneRepair_BoardRepair">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="ImgType" ColumnName="ImgType" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IPhoneRepair_SoakingRepair">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.IPhoneRepair_SoakingRepair">
+              <MappingFragment StoreEntitySet="IPhoneRepair_SoakingRepair">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MacBookRepair_SoakingRepair">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.MacBookRepair_SoakingRepair">
+              <MappingFragment StoreEntitySet="MacBookRepair_SoakingRepair">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="ImgType" ColumnName="ImgType" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubNavigation">
+            <EntityTypeMapping TypeName="AppleBar_dbModel.SubNavigation">
+              <MappingFragment StoreEntitySet="SubNavigation">
+                <ScalarProperty Name="NavID" ColumnName="NavID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
