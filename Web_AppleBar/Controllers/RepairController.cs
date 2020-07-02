@@ -7,21 +7,21 @@ using Web_AppleBar.Models;
 
 namespace Web_AppleBar.Controllers
 {
-    public class NewsController : Controller
+    public class RepairController : Controller
     {
         private AppleBar_dbEntities db = new AppleBar_dbEntities();
 
-        // GET: News
+        // GET: Repair
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult News()
+        public ActionResult RepairePriceInfo_Mac()
         {
-            var News = db.News.ToList();
+            var img=db.RepairePriceInfo_Mac.Where(m => m.ID !="0001").ToList();
 
-            return View(News);
+            return View(img);
         }
     }
 }

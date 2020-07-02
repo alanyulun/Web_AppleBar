@@ -7,42 +7,402 @@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
-
+    <link href="~/CSS/www-player-webp.css" rel="stylesheet" />
+    <link href="~/CSS/swanky.tint-6c103231e30ebcaf4acaa835743137a37d6d8491615b852beed7f834c6b8abe5.css" rel="stylesheet" />
+    <link href="~/CSS/swanky.centered-65e1e74b773431debdd3907a43faf352cacb195537330d9c6e86fb62b1448dfe.css" rel="stylesheet" />
+    <link href="~/CSS/swanky-705861ce76e37fc06ab7cf5f893ea280304a4bf0a8e13943e4afeb472f28d30e.css" rel="stylesheet" />
+    <link href="~/CSS/social-icons.css" rel="stylesheet" />
+    <link href="~/CSS/sites.css" rel="stylesheet" />
+    <link href="~/CSS/JhzWrt0cCBK.css" rel="stylesheet" />
+    <link href="~/CSS/main_style.css" rel="stylesheet" />
+    <link href="~/CSS/Home.css" rel="stylesheet" />
+    <link href="~/CSS/fancybox.css" rel="stylesheet" />
+    <link href="~/CSS/common-aa674f4614ad4e26606c6b9b2f27c48e137f568634c4c9796e981254b36bb361.css" rel="stylesheet" />
     @System.Web.Optimization.Styles.Render("~/Content/css")
     @System.Web.Optimization.Scripts.Render("~/bundles/modernizr")
     @RenderSection("css", false)
+    <link href="~/CSS/application-8a44c241bc61eee93644556a0f0992100aeebcc0b907a7cc6d2511a8b6ef01db.css" rel="stylesheet" />
 </head>
 <body>
-    @*<div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
+
+    <!--手機板頁面-->
+    <div class="side-panel-search search-panel-mobile">
+        <form ng-controller="ProductsSearchController" ng-submit="search(searchQuery, $event); $event.preventDefault();" action="https://www.applebar.com.tw/#/search/" class="ng-pristine ng-valid ng-scope">
+            <button class="mobile-search-btn"><span class="fa fa-search"></span></button>
+            <input type="search" name="searchQuery" ng-model="searchQuery" placeholder="找商品" class="ng-pristine ng-untouched ng-valid ng-empty">
+            <span class="fa fa-times ng-hide" ng-class="{ &#39;has-search-query&#39;: searchQuery }" ng-show="searchQuery.length &gt; 0" ng-click="clearSearch()"></span>
+        </form>
+        <div class="search-mask"></div>
+    </div>
+
+    <div id="fixed-menu-container" class="mobile-revamp-navigation ">
+        <a class="visible-xs m-search-button menu-button ie-hack ">
+            <span class="fa fa-search"></span>
+        </a>
+
+        <!-- mobile logo -->
+        <div class="mobile-logo">
+            <a href="https://www.applebar.com.tw/" class="sl-lazy-image" style="background-image: url(&#39;https://shoplineimg.com/566a8670e37ec6b552000033/567232fb69702d59d26d3200/x40.webp?source_format=png&#39;)"></a>
+        </div>
+    </div>
+
+    <div class="body-wrapper">
+        <div class="body-content mobile-revamp-navigation">
+            <nav class="main-navigation">
+                <!---navigation -->
+                <div class="navbar-wrapper">
+                    <div class="navbar hidden-xs" role="navigation">
+                        <div class="navbar-menu">
+                            <div class="container">
+                                <div class="navbar-menu hidden-xs">
+                                    <ul class="text-primary-color">
+                                        <li link-highlight="/pages/最新活動">
+                                            <a link-highlight="/pages/最新活動" href="https://www.applebar.com.tw/pages/%E6%9C%80%E6%96%B0%E6%B4%BB%E5%8B%95" target="" ng-non-bindable="">最新活動</a>
+                                        </li>
+
+                                        <li class="nav-dropdown" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2">
+                                            <a class="nav-dropdown-toggle" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2" href="Apple產品常見故障一覽 - ai3C專業維修中心.html" target="" ng-non-bindable="">IPHONE維修 <span class="caret"></span></a>
+                                            <ul class="nav-dropdown-menu">
+                                                <li link-highlight="/pages/IPHONE電池維修">
+                                                    <a link-highlight="/pages/IPHONE電池維修" href="iPhone電池舊換新優惠30分鐘完修 - ai3C專業維修中心.html" target="" ng-non-bindable="">IPHONE電池維修</a>
+                                                </li>
+                                                <li link-highlight="/pages/IPHONE進水急救">
+                                                    <a link-highlight="/pages/IPHONE進水急救" href="iPhone進水怎麼急救？ - ai3C專業維修中心.html" target="" ng-non-bindable="">IPHONE進水急救</a>
+                                                </li>
+                                                <li link-highlight="/pages/精密主版維修">
+                                                    <a link-highlight="/pages/精密主版維修" href="iPhone. iPad. Mac精密主機板維修 - ai3C專業維修中心.html" target="" ng-non-bindable="">精密主版維修</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="nav-dropdown" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2">
+                                            <a class="nav-dropdown-toggle" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2" href="MacBook常見故障問題 - ai3C專業維修中心.html" target="" ng-non-bindable="">MAC維修 <span class="caret"></span></a>
+                                            <ul class="nav-dropdown-menu">
+                                                <li link-highlight="/pages/MAC進水維修維修">
+                                                    <a link-highlight="/pages/MAC進水維修維修" href="MacBook進水如何搶救_常見鍵盤按鍵失效、循跡板故障、主機板故障開不了機&#21407 - ai3C專業維修中心.html" target="" ng-non-bindable="">MacBooK進水維修維修</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-dropdown" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2">
+                                            <a class="nav-dropdown-toggle" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2" href="https://www.applebar.com.tw/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2" target="" ng-non-bindable="">APPLE回收 <span class="caret"></span></a>
+                                            <ul class="nav-dropdown-menu">
+                                                <li link-highlight="/pages/iphone">
+                                                    <a link-highlight="/pages/iphone" href="https://www.applebar.com.tw/pages/iphone" target="" ng-non-bindable="">iPhone 回收</a>
+                                                </li>
+                                                <li link-highlight="/pages/ipad">
+                                                    <a link-highlight="/pages/ipad" href="https://www.applebar.com.tw/pages/ipad" target="" ng-non-bindable="">iPad 回收</a>
+                                                </li>
+                                                <li link-highlight="/pages/mac-回收">
+                                                    <a link-highlight="/pages/mac-回收" href="https://www.applebar.com.tw/pages/mac-%E5%9B%9E%E6%94%B6" target="" ng-non-bindable="">Mac 回收</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li link-highlight="/pages/mac升級">
+                                            <a link-highlight="/pages/mac升級" href="Mac升級.html" target="" ng-non-bindable="">Mac升級</a>
+                                        </li>
+                                        <li class="nav-dropdown" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2">
+                                            <a class="nav-dropdown-toggle" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2" href="ai3C 維修MacBook筆電實例 - ai3C專業維修中心.html" target="" ng-non-bindable="">維修案例 <span class="caret"></span></a>
+                                            <ul class="nav-dropdown-menu">
+                                                <li link-highlight="/pages/IPHONE維修案例">
+                                                    <a link-highlight="/pages/IPHONE維修案例" href="ai3C蘋果維修實例 - iPhone手機 - ai3C專業維修中心.html" target="" ng-non-bindable="">IPHONE維修案例</a>
+                                                </li>
+                                                <li link-highlight="/pages/IPAD維修案例">
+                                                    <a link-highlight="/pages/IPAD維修案例" href="ai3C iPad 平板電腦維修實例 - ai3C專業維修中心.html" target="" ng-non-bindable="">IPAD維修案例</a>
+                                                </li>
+                                                <li link-highlight="/pages/Macbook維修案例">
+                                                    <a link-highlight="/pages/Macbook維修案例" href="ai3C 維修MacBook筆電實例 - ai3C專業維修中心.html" target="" ng-non-bindable="">精密主版維修</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-dropdown" link-highlight="/pages/維修價目表">
+                                            <a class="nav-dropdown-toggle" link-highlight="/pages/維修價目表升級" href="iPhone維修.html" target="" ng-non-bindable="">維修價目表<span class="caret"></span></a>
+                                            <ul class="nav-dropdown-menu">
+                                                <li link-highlight="/pages/IPHONE維修">
+                                                    <a link-highlight="/pages/IPHONE維修" href="ai3C蘋果維修實例 - iPhone手機 - ai3C專業維修中心.html" target="" ng-non-bindable="">IPHONE維修</a>
+                                                </li>
+                                                <li link-highlight="/pages/IPAD維修">
+                                                    <a link-highlight="/pages/IPAD維修" href="ai3C iPad 平板電腦維修實例 - ai3C專業維修中心.html" target="" ng-non-bindable="">IPAD維修</a>
+                                                </li>
+                                                <li link-highlight="/pages/Mac維修">
+                                                    <a link-highlight="/pages/Mac維修" href="/Repair/RepairePriceInfo_Mac" target="" ng-non-bindable="">MAC維修</a>
+                                                </li>
+                                                <li link-highlight="/pages/主機板維修">
+                                                    <a link-highlight="/pages/主機板維修" href="ai3C 維修MacBook筆電實例 - ai3C專業維修中心.html" target="" ng-non-bindable="">主機板維修</a>
+                                                </li>
+                                                <li link-highlight="/pages/宅配維修">
+                                                    <a link-highlight="/pages/宅配維修" href="ai3C 維修MacBook筆電實例 - ai3C專業維修中心.html" target="" ng-non-bindable="">宅配維修</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li link-highlight="/pages/關於apple-bar">
+                                            <a link-highlight="/pages/關於apple-bar" href="https://www.applebar.com.tw/pages/%E9%97%9C%E6%96%BCapple-bar" target="" ng-non-bindable="">門市資訊</a>
+                                        </li>
+                                        <li link-highlight="https://www.google.com/search?rlz=1C1CHBD_zh-TWTW884TW884&ei=omnTXtOCNe-Cr7wPhriT4AM&q=POWERFIX+&oq=POWERFIX+&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BQgAEM0COgQIABATOgYIABAKEBNQxwtY9Axg3BBoAHAAeACAATWIAZoBkgEBM5gBAKABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjT24W11t3pAhVvwYsBHQbcBDwQ4dUDCAw&uact=5">
+                                            <a link-highlight="https://www.google.com/search?rlz=1C1CHBD_zh-TWTW884TW884&ei=omnTXtOCNe-Cr7wPhriT4AM&q=POWERFIX+&oq=POWERFIX+&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BQgAEM0COgQIABATOgYIABAKEBNQxwtY9Axg3BBoAHAAeACAATWIAZoBkgEBM5gBAKABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjT24W11t3pAhVvwYsBHQbcBDwQ4dUDCAw&uact=5" href="https://www.google.com/search?rlz=1C1CHBD_zh-TWTW884TW884&ei=omnTXtOCNe-Cr7wPhriT4AM&q=POWERFIX+&oq=POWERFIX+&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BQgAEM0COgQIABATOgYIABAKEBNQxwtY9Axg3BBoAHAAeACAATWIAZoBkgEBM5gBAKABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjT24W11t3pAhVvwYsBHQbcBDwQ4dUDCAw&uact=5" target="_blank" ng-non-bindable="">GOOGLE評論</a>
+                                        </li>
+                                        <li link-highlight="https://www.facebook.com/powerfixpro/">
+                                            <a link-highlight="https://www.facebook.com/powerfixpro/" href="https://www.facebook.com/powerfixpro/" target="_blank" ng-non-bindable="">Facebook粉絲團</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div> <!--container-->
+                        </div>
+                    </div><!--navbar-->
+                </div><!--navbar-wrapper-->
+                <!-- navigation end -->
+            </nav>
+            <!-- main Content -->
+            <div class="container">
+                @RenderBody()
             </div>
         </div>
-    </div>*@
-
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
+    <hr />
+    <footer style=" vertical-align: middle;">
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>
+
+
+
+
+
+
+
+
+
+
 
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
 
     @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
     @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript">
+        (function (e, t, s, c, n, o, p) {
+            e.shoplytics || ((p = e.shoplytics = function () {
+                p.exec ? p.exec.apply(p, arguments) : p.q.push(arguments)
+            }).v = '1.0', p.q = [], (n = t.createElement(s)).async = !0,
+                n.src = c, (o = t.getElementsByTagName(s)[0]).parentNode.insertBefore(n, o))
+        })(window, document, 'script', 'https://cdn.shoplytics.com/js/shoplytics-tracker/latest/shoplytics-tracker.js');
+        shoplytics('init', 'shop', {
+            register: { "session_id": { "public_id": "1fb94c7666799a9387dff567b7594209" }, "merchant_id": "566a8670e37ec6b552000033", "country": "TW", "language": "zh-hant" }
+        });
+        // for facebook login redirect
+        if (location.hash === '#_=_') {
+            history.replaceState(null, document.title, location.toString().replace(/#_=_$/, ''));
+        }
+        window.resizeImages = function (element) {
+            var images = (element || document).getElementsByClassName("sl-lazy-image")
+            var styleRegex = /background\-image:\ *url\(['"]?(https\:\/\/shoplineimg.com\/[^'"\)]*)+['"]?\)/
+            for (var i = 0; i < images.length; i++) {
+                var image = images[i]
+                try {
+                    var src = image.getAttribute('src') || image.getAttribute('style').match(styleRegex)[1]
+                } catch (e) {
+                    continue;
+                }
+                var setBySrc, head, tail, width, height;
+                try {
+                    if (!src) { throw 'Unknown source' }
+                    setBySrc = !!image.getAttribute('src') // Check if it's setting the image url by "src" or "style"
+                    var urlParts = src.split("?"); // Fix issue that the size pattern can be in external image url
+                    var result = urlParts[0].match(/(.*)\/(\d+)?x?(\d+)?(.*)/) // Extract width and height from url (e.g. 1000x1000), putting the rest into head and tail for repackaging back
+                    head = result[1]
+                    tail = result[4]
+                    width = parseInt(result[2], 10);
+                    height = parseInt(result[3], 10);
+                    if (!!((width || height) && head != '') !== true) { throw 'Invalid image source'; }
+                } catch (e) {
+                    if (typeof e !== 'string') { console.error(e) }
+                    continue;
+                }
+                var segment = parseInt(image.getAttribute('data-resizing-segment') || 200, 10)
+                var scale = window.devicePixelRatio > 1 ? 2 : 1
+                // Resize by size of given element or image itself
+                var refElement = image;
+                if (image.getAttribute('data-ref-element')) {
+                    var selector = image.getAttribute('data-ref-element');
+                    if (selector.indexOf('.') === 0) {
+                        refElement = document.getElementsByClassName(image.getAttribute('data-ref-element').slice(1))[0]
+                    } else {
+                        refElement = document.getElementById(image.getAttribute('data-ref-element'))
+                    }
+                }
+                var refWidth = image.getAttribute('data-max-width') ? Math.min(parseInt(image.getAttribute('data-max-width')), refElement.offsetWidth) : refElement.offsetWidth;
+                var refHeight = image.getAttribute('data-max-height') ? Math.min(parseInt(image.getAttribute('data-max-height')), refElement.offsetHeight) : refElement.offsetHeight;
+                // Get desired size based on view, segment and screen scale
+                var resizedWidth = isNaN(width) === false ? Math.ceil(refWidth * scale / segment) * segment : undefined
+                var resizedHeight = isNaN(height) === false ? Math.ceil(refHeight * scale / segment) * segment : undefined
+                if (resizedWidth || resizedHeight) {
+                    var newSrc = head + '/' + ((resizedWidth || '') + 'x' + (resizedHeight || '')) + (tail || '') + '?';
+                    for (var j = 1; j < urlParts.length; j++) { newSrc += urlParts[j]; }
+                    if (newSrc !== src) {
+                        if (setBySrc) {
+                            image.setAttribute('src', newSrc);
+                        } else {
+                            image.setAttribute('style', image.getAttribute('style').replace(styleRegex, 'background-image:url(' + newSrc + ')'));
+                        }
+                    }
+                }
+            }
+        }
+        window.addEventListener('DOMContentLoaded', function () {
+            app.value('mainConfig', JSON.parse('{\"sessionId\":{\"public_id\":\"1fb94c7666799a9387dff567b7594209\"},\"merchantId\":\"566a8670e37ec6b552000033\",\"appCoreHost\":\"shoplineapp.com\",\"apiBaseUrl\":\"http://shoplineapp.com\",\"eventTrackApi\":\"https://events.shoplytics.com/api\",\"appendToUrl\":\"\",\"env\":\"production\",\"merchantData\":{\"_id\":\"566a8670e37ec6b552000033\",\"features\":[],\"base_country_code\":\"TW\",\"instagram_id\":\"2140686381\",\"owner_type\":\"User\",\"status\":\"active\",\"shop_status\":\"open\",\"profile_image\":null,\"facebook_page_id\":\"398403287278365\",\"current_plan_key\":\"pro\",\"current_theme_key\":\"swanky\",\"signup_ref\":{},\"remarks\":{},\"tags_s\":\"\",\"tags\":[\"electronics\"],\"invoice_activation\":\"inactive\",\"owner_id\":\"566a8670e37ec6b552000032\",\"owner_id_s\":\"566a8670e37ec6b552000032\",\"name\":\"Apple Bar\",\"handle\":\"applebar2015333\",\"updated_at\":\"2020-02-12T09:06:11.131Z\",\"base_currency_code\":\"TWD\",\"domain_remarks\":\"\",\"favicon_media_id\":\"5672309c69702d63dc242c00\",\"beta_feature_keys\":[\"promotions_apply\",\"hide_coupon\",\"checkout_v2\",\"promotions_setup\"],\"enabled_stock_reminder\":true,\"identifier\":\"\",\"instagram_access_token\":\"\",\"addon_limit_enabled\":true,\"custom_redirection_enabled\":true,\"is_short_message_activated\":false,\"ignore_browser_lang\":true,\"family_mart_vendors\":[],\"is_ka\":false,\"supported_languages\":[\"en\",\"zh-hant\"],\"staff_id\":\"5b56b5c6a8989f0005e642a0\",\"show_sold_out\":false,\"banner_ids\":[],\"bought_domains\":[{\"_id\":\"5df72b2c8a8bb776d682e3c1\",\"domain_name\":\"www.applebar.com.tw\",\"provider\":\"opensrs\",\"expiry_date\":\"2020-12-16T08:52:40.000Z\",\"last_applied_at\":\"2019-12-16T06:58:52.754Z\",\"updated_at\":\"2019-12-16T06:58:52.754Z\",\"created_at\":\"2019-12-16T06:58:52.754Z\"}],\"sycts\":\"2020-05-13T05:04:51.163Z\",\"enforce_otp\":false,\"brand_home_url\":\"https://www.applebar.com.tw\",\"base_currency\":{\"id\":\"twd\",\"iso_code\":\"TWD\",\"alternate_symbol\":\"NT$\",\"name\":\"New Taiwan Dollar\",\"symbol_first\":true,\"subunit_to_unit\":1},\"subscription_currency\":{\"id\":\"twd\",\"iso_code\":\"TWD\",\"alternate_symbol\":\"NT$\",\"name\":\"New Taiwan Dollar\",\"symbol_first\":true,\"subunit_to_unit\":1},\"mobile_logo_media_url\":\"https://img.shoplineapp.com/media/image_clips/567232fb69702d59d26d3200/original.png?1450324730\",\"shop_default_home_url\":\"https://applebar2015333.shoplineapp.com\",\"payment_method_count\":5,\"delivery_option_count\":3,\"credit_balance\":null,\"layout_bundle_tag\":\"566a8670e37ec6b552000033\",\"rollout_keys\":[\"order_export_v2\",\"select_all_inventory\",\"breadcrumb\",\"apps_store_fb_comment\",\"molpay_credit_card\",\"job_api_products_export\",\"customer_import_v2\",\"tw_stripe_subscription\",\"customer_new_report\",\"job_api_user_export\",\"assign_products_to_category\",\"credit_setting_logs\",\"footer_builder_new\",\"hk_pricing_page_2019\",\"select_all_customer\",\"address_format_us\",\"address_format_jp\",\"address_format_my\",\"fmt_revision\",\"fbe_oe\",\"my_pricing_page_2019\",\"promotion_hour\",\"UTM_register\",\"promotion_minitem\",\"address_format_batch2\",\"line_shopping_new_fields\",\"bundle_stackable\",\"hidden_product_p2\",\"apps_store\",\"fmt_c2c_newlabel\",\"subscription_currency\",\"shoplytics_behavior\",\"dashboard_v2\",\"fb_sub_button\",\"address_format_vn\",\"sso_lang_th\",\"staff_elasticsearch\",\"page_view_cache\",\"message_revamp\",\"product_index_v2\",\"google_dynamic_remarketing_tag\",\"new_layout_for_mobile_and_pc\",\"custom_order_export\",\"godaddy\",\"tappay_sdk_v2_3_2\",\"facebook_dia\",\"order_status_tag_color\",\"auto_credit_reward\",\"new_onboarding_flow\",\"facebook_notify\",\"tappay_sdk_v3\",\"rejected_bill_reminder\",\"signin_register_revamp\",\"paypal_upgrade\",\"integrated_sfexpress\",\"shopping_session_enabled\",\"tnc-checkbox\",\"tappay_3D_secure\",\"delivery_time\",\"fm_order_receipt\",\"einvoice_newlogic\",\"preset_publish\",\"multi_lang\",\"auto_credit_percentage\",\"auto_credit_recurring\",\"orderemail_new_logic\",\"h2_tag_phase1\",\"stripe_radar\",\"broadcast_advanced_filters\",\"component_h1_tag\",\"feature_alttag_phase1\",\"execute_shipment_permission\",\"stripe_3d_secure\",\"bulk_payment_delivery_setting\",\"apps_store_wishlist\",\"UTM_export\",\"apps_store_blog\",\"manual_order\",\"bundle_pricing\",\"variant_image_selector\",\"broadcast_email_html\",\"auto_save_sf_plus_address\",\"theme_ultrachic\",\"ultra_setting\",\"image_host_by_region\",\"static_resource_host_by_region\",\"recaptcha_reset_pw\",\"tw_fm_sms\",\"default_theme_ultrachic\",\"shoplytics_lite\",\"tw_pricing_page_2019\",\"cart_addon_limit\",\"order_split\",\"revert_credit_status\",\"customer_advanced_filter\",\"theme_kingsman_v2\",\"new_return_management\",\"3_layer_category\",\"kingsman_v2_setting\",\"promotion_blacklist\",\"broadcast_analytics\",\"addon_quantity\",\"date_picker_v2\",\"ecpay_expirydate\",\"credit_condition\",\"variation_label_swatches\",\"image_gallery\",\"create_staff_revamp\",\"customer_export_restrict\",\"image_widget_mobile\",\"711_c2b_report_v2\",\"manual_order_7-11\",\"order_filter_shipped_date\",\"new_sinopac_3d\",\"revert_credit_p2\",\"admin_v2\",\"image_gallery_p2\",\"broadcast_clone\",\"footer_builder\",\"staff_service_migration\",\"admin_vietnam_dong\",\"broadcast_line_template\",\"taxes_settings\",\"broadcast_facebook_template\",\"cn_pricing_page_2019\",\"sl_pos_credit\",\"broadcast_unsubscribe_email\",\"unified_admin\",\"facebook_ads\",\"ig_new_api\",\"sso_lang_vi\",\"th_pricing_page_2020\",\"vn_pricing_page_2020\",\"shoplytics_to_hd\"],\"subscribed_webhook_topics\":[],\"raw_subscription_currency\":null,\"user_setting\":{\"_id\":\"566a875069702d3dc9bf8900\",\"created_at\":\"2015-12-11T08:20:32.529Z\",\"data\":{\"general_fields\":[{\"type\":\"gender\",\"options\":{\"order\":{\"include\":\"true\",\"required\":\"false\"},\"signup\":{\"include\":\"true\",\"required\":\"false\"},\"profile\":{\"include\":\"true\",\"required\":\"false\"}}},{\"type\":\"birthday\",\"options\":{\"order\":{\"include\":\"true\",\"required\":\"false\"},\"signup\":{\"include\":\"true\",\"required\":\"false\"},\"profile\":{\"include\":\"true\",\"required\":\"false\"}}}],\"facebook_login\":{\"status\":\"active\",\"app_id\":\"1043447789052270\"}},\"item_type\":\"\",\"key\":\"users\",\"name\":null,\"owner_id\":\"566a8670e37ec6b552000033\",\"owner_type\":\"Merchant\",\"publish_status\":\"published\",\"status\":\"active\",\"updated_at\":\"2016-01-27T01:30:30.525Z\",\"value\":null},\"product_setting\":{},\"order_setting\":{\"invoice_activation\":\"inactive\",\"short_message_activation\":\"inactive\",\"stock_reminder_activation\":\"true\",\"default_out_of_stock_reminder\":false,\"auto_cancel_expired_orders\":true,\"auto_revert_credit\":false,\"enabled_order_auth_expiry\":true,\"enforce_user_login_on_checkout\":true,\"enable_order_split_einvoice_reissue\":false,\"no_duplicate_uniform_invoice\":false,\"hourly_auto_invoice\":false,\"enabled_location_id\":false,\"custom_fields\":null,\"invoice\":{\"tax_id\":\"\"},\"facebook_messenging\":{\"status\":\"deactivated\"},\"status_update_sms\":{\"status\":\"deactivated\"}},\"time_zone\":\"Asia/Taipei\"},\"localeData\":{\"loadedLanguage\":{\"name\":\"繁體中文\",\"code\":\"zh-hant\"},\"supportedLocales\":[{\"name\":\"English\",\"code\":\"en\"},{\"name\":\"繁體中文\",\"code\":\"zh-hant\"}]},\"currentUser\":null,\"themeSettings\":{\"hover\":\"swanky.tint\",\"header_mode\":\"centered\",\"categories_collapsed\":false,\"image_fill\":false,\"is_multicurrency_enabled\":false},\"features\":{\"plans\":{\"free\":{\"member_price\":false,\"cart_addon\":false,\"google_analytics_ecommerce\":false,\"membership\":false,\"shopline_logo\":true,\"user_credit\":{\"manaul\":false,\"auto\":false},\"variant_image_selector\":false},\"standard\":{\"member_price\":false,\"cart_addon\":false,\"google_analytics_ecommerce\":false,\"membership\":false,\"shopline_logo\":true,\"user_credit\":{\"manaul\":false,\"auto\":false},\"variant_image_selector\":false},\"starter\":{\"member_price\":false,\"cart_addon\":false,\"google_analytics_ecommerce\":false,\"membership\":false,\"shopline_logo\":true,\"user_credit\":{\"manaul\":false,\"auto\":false},\"variant_image_selector\":false},\"pro\":{\"member_price\":false,\"cart_addon\":false,\"google_analytics_ecommerce\":false,\"membership\":false,\"shopline_logo\":false,\"user_credit\":{\"manaul\":false,\"auto\":false},\"variant_image_selector\":false},\"business\":{\"member_price\":false,\"cart_addon\":false,\"google_analytics_ecommerce\":true,\"membership\":true,\"shopline_logo\":false,\"user_credit\":{\"manaul\":false,\"auto\":false},\"facebook_comments_plugin\":true,\"variant_image_selector\":false},\"basic\":{\"member_price\":false,\"cart_addon\":false,\"google_analytics_ecommerce\":false,\"membership\":false,\"shopline_logo\":false,\"user_credit\":{\"manaul\":false,\"auto\":false},\"variant_image_selector\":false},\"basic2018\":{\"member_price\":false,\"cart_addon\":false,\"google_analytics_ecommerce\":false,\"membership\":false,\"shopline_logo\":true,\"user_credit\":{\"manaul\":false,\"auto\":false},\"variant_image_selector\":false},\"sc\":{\"member_price\":false,\"cart_addon\":false,\"google_analytics_ecommerce\":true,\"membership\":false,\"shopline_logo\":true,\"user_credit\":{\"manaul\":false,\"auto\":false},\"facebook_comments_plugin\":true,\"facebook_chat_plugin\":true,\"variant_image_selector\":false},\"advanced\":{\"member_price\":false,\"cart_addon\":false,\"google_analytics_ecommerce\":true,\"membership\":false,\"shopline_logo\":false,\"user_credit\":{\"manaul\":false,\"auto\":false},\"facebook_comments_plugin\":true,\"facebook_chat_plugin\":true,\"variant_image_selector\":false},\"premium\":{\"member_price\":true,\"cart_addon\":true,\"google_analytics_ecommerce\":true,\"membership\":true,\"shopline_logo\":false,\"user_credit\":{\"manaul\":true,\"auto\":true},\"google_dynamic_remarketing\":true,\"facebook_comments_plugin\":true,\"facebook_chat_plugin\":true,\"wish_list\":true,\"facebook_messenger_subscription\":true,\"product_feed\":true,\"express_checkout\":true,\"variant_image_selector\":true},\"enterprise\":{\"member_price\":true,\"cart_addon\":true,\"google_analytics_ecommerce\":true,\"membership\":true,\"shopline_logo\":false,\"user_credit\":{\"manaul\":true,\"auto\":true},\"google_dynamic_remarketing\":true,\"facebook_comments_plugin\":true,\"facebook_chat_plugin\":true,\"wish_list\":true,\"facebook_messenger_subscription\":true,\"product_feed\":true,\"express_checkout\":true,\"variant_image_selector\":true},\"crossborder\":{\"member_price\":true,\"cart_addon\":true,\"google_analytics_ecommerce\":true,\"membership\":true,\"shopline_logo\":false,\"user_credit\":{\"manaul\":true,\"auto\":true},\"google_dynamic_remarketing\":true,\"facebook_comments_plugin\":true,\"facebook_chat_plugin\":true,\"wish_list\":true,\"facebook_messenger_subscription\":true,\"product_feed\":true,\"express_checkout\":true,\"variant_image_selector\":true},\"o2o\":{\"member_price\":true,\"cart_addon\":true,\"google_analytics_ecommerce\":true,\"membership\":true,\"shopline_logo\":false,\"user_credit\":{\"manaul\":true,\"auto\":true},\"google_dynamic_remarketing\":true,\"facebook_comments_plugin\":true,\"facebook_chat_plugin\":true,\"wish_list\":true,\"facebook_messenger_subscription\":true,\"product_feed\":true,\"express_checkout\":true,\"subscription_product\":true,\"variant_image_selector\":true}}},\"requestCountry\":\"TW\",\"trackerEventData\":{},\"currencyData\":{\"supportedCurrencies\":[{\"name\":\"$ HKD\",\"symbol\":\"$\",\"iso_code\":\"hkd\"},{\"name\":\"¥ CNY\",\"symbol\":\"¥\",\"iso_code\":\"cny\"},{\"name\":\"$ TWD\",\"symbol\":\"$\",\"iso_code\":\"twd\"},{\"name\":\"$ USD\",\"symbol\":\"$\",\"iso_code\":\"usd\"},{\"name\":\"$ SGD\",\"symbol\":\"$\",\"iso_code\":\"sgd\"},{\"name\":\"€ EUR\",\"symbol\":\"€\",\"iso_code\":\"eur\"},{\"name\":\"$ AUD\",\"symbol\":\"$\",\"iso_code\":\"aud\"},{\"name\":\"£ GBP\",\"symbol\":\"£\",\"iso_code\":\"gbp\"},{\"name\":\"₱ PHP\",\"symbol\":\"₱\",\"iso_code\":\"php\"},{\"name\":\"RM MYR\",\"symbol\":\"RM\",\"iso_code\":\"myr\"},{\"name\":\"฿ THB\",\"symbol\":\"฿\",\"iso_code\":\"thb\"},{\"name\":\"د.إ AED\",\"symbol\":\"د.إ\",\"iso_code\":\"aed\"},{\"name\":\"¥ JPY\",\"symbol\":\"¥\",\"iso_code\":\"jpy\"},{\"name\":\"K MMK\",\"symbol\":\"K\",\"iso_code\":\"mmk\"},{\"name\":\"$ BND\",\"symbol\":\"$\",\"iso_code\":\"bnd\"},{\"name\":\"₩ KRW\",\"symbol\":\"₩\",\"iso_code\":\"krw\"},{\"name\":\"Rp IDR\",\"symbol\":\"Rp\",\"iso_code\":\"idr\"},{\"name\":\"₫ VND\",\"symbol\":\"₫\",\"iso_code\":\"vnd\"}]},\"previousUrl\":\"\",\"checkoutLandingPath\":\"/cart\",\"webpSupported\":54,\"pageType\":\"home-index\"}'));
+            app.value('flash', {
+            });
+            app.value('flash_data', {});
+            app.constant('imageServiceEndpoint', 'https\:\/\/shoplineimg.com/')
+            app.constant('staticImageHost', 'shoplineimg.com')
+            app.constant('staticResourceHost', 'https://s3-ap-southeast-1.amazonaws.com/static.shoplineapp.com/')
+            app.constant('FEATURES_LIMIT', JSON.parse('{\"product_limit\":250,\"image_limit\":6000,\"payment\":{\"stripe_apple_pay\":false,\"stripe_fpx\":false,\"alipay\":false,\"hsbc_fps\":false,\"payme\":false},\"integrated_delivery\":{\"create\":{\"seven_eleven\":false,\"family_mart\":false,\"tcat\":false,\"integrated_sfexpress\":false},\"edit\":{\"seven_eleven\":false,\"family_mart\":false,\"tcat\":false,\"integrated_sfexpress\":false}},\"media\":{\"product_main\":12,\"product_detail\":20},\"coupon_limit\":10,\"promotion_limit\":10,\"addon_products_limit\":0,\"enable_cart_addon_item\":false,\"gifts_limit\":0,\"page_limit\":-1,\"product_page_limit\":0,\"category_limit\":-1,\"show_footer_brand\":false,\"order_settings\":{\"custom_field_limit\":5},\"link_limits\":{\"main\":50,\"footer1\":5,\"footer2\":5},\"staff_limit\":0,\"event_trackers\":[\"google_analytics\",\"google_adwords\",\"facebook_pixel\",\"facebook_standard_pixel\"],\"sfexpress_types\":[\"service\",\"store\",\"centre\",\"eflocker\"],\"product_feed\":{\"facebook_catalog\":false,\"criteo\":false},\"membership\":{\"index\":true,\"export\":false,\"import\":false,\"view_user\":true,\"custom_field_limit\":5,\"tiers\":0,\"blacklist\":true},\"analytics\":false,\"design_submenu\":true,\"design\":{\"multicurrency\":true,\"custom_css\":false,\"shop_template_advanced_setting\":true,\"logo_favicon\":true},\"theme_level\":2,\"user_settings\":{\"facebook_login\":true,\"recaptcha_signup\":true},\"reports\":true,\"user_credit\":{\"manual\":false,\"auto\":false},\"blog\":false,\"facebook_comments_plugin\":false,\"wish_list\":false,\"facebook_messenger_subscription\":false,\"abandoned_cart_notification\":false,\"broadcast_center\":false,\"supported_languages_limit\":3,\"available_languages\":[\"en\"],\"variant_image_selector\":false,\"manual_order\":false,\"channel_shopee\":false,\"subscription_product\":false,\"membership_tiers\":false,\"auto_credit\":false,\"cart_addon\":false,\"google_analytics_ecommerce\":false,\"shopline_logo\":false,\"express_checkout\":false,\"facebook_chat_plugin\":false,\"google_dynamic_remarketing\":false,\"image_widget_mobile\":true,\"variant_saleprice_cost_weight\":false,\"currency\":{\"vietnam_dong\":false},\"customer_advanced_filter\":false,\"order_filter_shipped_date\":true,\"marketing_affiliate\":false,\"pos\":\"with_shop\",\"taxes_settings\":true,\"image_gallery_p2\":true,\"admin_v2\":true,\"broadcast_unsubscribe_email\":true,\"shopcom_push_api\":false,\"message_center_v2\":false,\"line_shopping_new_fields\":true,\"merchant_webhook_via_event_center\":false,\"product_quantity_update\":false,\"handsup_checkout\":false,\"member_points\":false,\"blog_app\":false,\"fb_comment_app\":false,\"wishlist_app\":false,\"custom_notify\":false,\"email_order_notify\":false,\"shopline_product_reviews\":false,\"email_member_register_notify\":false,\"upgrade_reminder\":false,\"unified_admin\":true,\"bundle_group\":false,\"subscription_currency\":true,\"sl_pos\":false,\"email_member_forget_password_notify\":false,\"sl_pos_channel\":false,\"channel_integration\":false,\"shop_crm_express\":false,\"hidden_product_p2\":true,\"product_stock\":false,\"product_info\":false,\"delivery_with_emap\":false,\"facebook_ads\":true,\"admin_custom_domain\":false,\"custom_sms_order_notify\":false,\"line_1on1_chat\":false,\"fb_1on1_chat\":false,\"ninja_van\":false,\"integration_one\":false,\"product_log_v2\":false,\"711_cross_delivery\":false,\"unique_id_feed\":false,\"dashboard_v2\":true,\"fb_shop_now_button\":false,\"admin_lang_th\":false,\"admin_lang_vi\":false,\"studio_livestream\":false,\"line_in_chat_shopping\":false,\"layout_engine\":false,\"google_tag_manager\":true,\"yahoo_dot\":true,\"bing_ads\":true,\"data_layer_info\":false,\"ig_new_api\":true,\"channel_customer_authentication\":false,\"auto_reply_fb\":false,\"tcat_newlabel\":false,\"settings_field\":false,\"online_store_design\":true,\"sl_pixel_tracker\":false,\"toggle_mobile_category\":true,\"line_signup\":true,\"vn_pricing_page_2020\":true,\"footer_brand\":false,\"product_feed_info\":false,\"google_recaptcha\":true,\"tw_pricing_page_sc_tab\":false,\"tw_sc_banner\":false,\"shoplytics_to_hd\":true,\"fbe_v1\":false,\"fbe_v2\":false,\"select_all_customer\":true,\"fmt_revision\":true,\"ecpay_expirydate\":true,\"new_sinopac_3d\":true,\"revert_credit_p2\":true}'))
+            app.config(function (AnalyticsProvider) {
+                AnalyticsProvider.startOffline(true);
+            });
+            app.value('fb_pixel_settings', {
+                unique_ids: false,
+                single_variation: false
+            });
+            try {
+                var $searchPanelMobile;
+                $('.left-panel-button').sidr({
+                    name: 'left-panel',
+                    side: 'left',
+                    body: ".body-wrapper",
+                    onOpen: function () {
+                        if ($searchPanelMobile.hasClass('click')) {
+                            $searchPanelMobile.removeClass('click');
+                        }
+                        $('html, body').css({ 'overflow': 'hidden' });
+                    },
+                    onClose: function () {
+                        $('html, body').css({ 'overflow': 'auto' });
+                    }
+                });
+                $('.cart-panel-button').sidr({
+                    name: 'cart-panel',
+                    side: 'left',
+                    body: ".body-wrapper",
+                    onOpen: function () {
+                        angular.element('body').scope().$broadcast('cart.reload');
+                        if ($searchPanelMobile.hasClass('click')) {
+                            $searchPanelMobile.removeClass('click');
+                        }
+                    }
+                });
+                $('.mobile-language-btn').sidr({
+                    name: 'language-panel',
+                    side: 'left',
+                    body: ".body-wrapper"
+                });
+                $('.mobile-currency-btn').sidr({
+                    name: 'currency-panel',
+                    side: 'left',
+                    body: ".body-wrapper"
+                });
+                $(".body-wrapper").on("click touch touchmove", function (e) {
+                    if ($(".body-wrapper").hasClass("sidr-open")) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        $.sidr('close', 'left-panel');
+                        $.sidr('close', 'cart-panel');
+                        $.sidr('close', 'currency-panel');
+                        $.sidr('close', 'language-panel');
+                        $('html, body').css({ 'overflow': 'auto' });
+                    }
+                });
+                $(document).ready(function () {
+                    $searchPanelMobile = $jq('.search-panel-mobile');
+                    // to show a loading dialog when a huge Product Description Image/Video blocks page content from rednering
+                    $("#product-loading").remove();
+                    $jq(".additional-details-content, .ProductDetail-additional, .ProductDetail-gallery")
+                        .find("img[data-src]:not([data-src='']), iframe[data-src]:not([data-src=''])")
+                        .each(function () {
+                            $(this)
+                                .attr('src', $(this).attr('data-src'))
+                                .removeAttr('data-src');
+                        });
+                    if ($jq("#home-carousel").length > 0) {
+                        $jq("#home-carousel").owlCarousel({
+                            items: 1,
+                            singleItem: true,
+                            autoPlay: true,
+                            stopOnHover: true,
+                            lazyLoad: true,
+                            onLoadedLazy: function (event) { window.resizeImages(event.target); },
+                            autoHeight: true,
+                            navigation: true,
+                            navigationText: false,
+                        });
+                    }
+                    $jq(".owl-carousel").each(function () {
+                        var owl = $jq(this);
+                        owl.owlCarousel({
+                            loop: true,
+                            items: 1,
+                            margin: 10,
+                            nav: false,
+                            lazyLoad: true,
+                            onLoadedLazy: function (event) {
+                                window.resizeImages(event.target);
+                            },
+                            onInitialized: function () {
+                                //owl-stage have transition: 0.25s Time difference
+                                setTimeout(function () {
+                                    owl.prev('.owl-carousel-first-initializing').hide();
+                                    owl
+                                        .removeClass('initializing')
+                                        .trigger('refresh.owl.carousel');
+                                }, 300);
+                            },
+                            autoplay: true,
+                            autoplayTimeout: (parseFloat($jq(this).data('interval')) || 5) * 1000,
+                            autoHeight: true,
+                            autoplayHoverPause: false // https://github.com/OwlCarousel2/OwlCarousel2/pull/1777
+                        });
+                    });
+                    setTimeout(function () {
+                        $jq('.title-container.ellipsis').dotdotdot({
+                            wrap: 'letter'
+                        });
+                        $jq('.Product-item .Product-info .Product-title').dotdotdot({
+                            wrap: 'letter',
+                            ellipsis: '...',
+                            height: 40
+                        });
+                    });
+                    // avoid using FB.XFBML.parse() as it breaks the fb-checkbox rendering, if u encounter resize issue, solve with CSS instead
+                });
+                $(document).on('click', '.m-search-button', function () {
+                    $searchPanelMobile.toggleClass('click');
+                    if ($('.body-wrapper').hasClass('sidr-open')) {
+                        $.sidr('close', 'left-panel');
+                        $.sidr('close', 'cart-panel');
+                        $.sidr('close', 'language-panel');
+                        $.sidr('close', 'currency-panel');
+                        $('html, body').css({ 'overflow': 'auto' });
+                    }
+                });
+                $(document).on('click', '.search-mask', function () {
+                    $searchPanelMobile.toggleClass('click');
+                });
+                if (window.scriptQueue && window.scriptQueue.length > 0) {
+                    for (var i = 0; i < window.scriptQueue.length; i++) {
+                        try {
+                            window.scriptQueue[i]();
+                        }
+                        catch (err) {
+                            console.error(err);
+                        }
+                    }
+                }
+            } catch (e) {
+                console.error(e);
+            }
+            angular.bootstrap(document, ['shop_app']);
+        });
+    </script>
+
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
