@@ -7,26 +7,19 @@ using Web_AppleBar.Models;
 
 namespace Web_AppleBar.Controllers
 {
-    public class IPhoneRepairController : Controller
+    public class MacBookRepairController : Controller
     {
         private AppleBar_dbEntities db = new AppleBar_dbEntities();
 
-        // GET: IPhoneRepair
+        // GET: MacBookRepair
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult BatteryRepair()
-        {
-            var Data = db.IPhoneRepair_BatteryRepaire.ToList();
-
-            return View(Data);
-        }
-
         public ActionResult SoakingRepair()
         {
-            var Data = db.IPhoneRepair_SoakingRepair.ToList();
+            var Data = db.MacBookRepair_SoakingRepair.ToList();
 
             return View(Data);
         }

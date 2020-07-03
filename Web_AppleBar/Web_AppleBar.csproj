@@ -1014,6 +1014,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IPhoneRepairController.cs" />
+    <Compile Include="Controllers\MacBookRepairController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\RepairController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1109,6 +1110,8 @@
     <Content Include="Views\Repair\RepairePriceInfo_Mac.cshtml" />
     <Content Include="Views\News\News.cshtml" />
     <Content Include="Views\IPhoneRepair\BatteryRepair.cshtml" />
+    <Content Include="Views\IPhoneRepair\SoakingRepair.cshtml" />
+    <Content Include="Views\MacBookRepair\SoakingRepair.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
