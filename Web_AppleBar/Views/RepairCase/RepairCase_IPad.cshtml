@@ -1,0 +1,169 @@
+﻿@section css{
+
+
+    <link href="~/CSS/repairCase.css" rel="stylesheet" />
+
+}
+
+
+
+@model IList<Web_AppleBar.Models.RepairCase_IPad>
+
+
+
+
+<div class="main-wrap">
+    <div id="wsite-content" class="wsite-elements wsite-not-footer">
+        <div class="wsite-section-wrap">
+            <div class="wsite-section wsite-body-section wsite-background-5">
+                <div class="wsite-section-content">
+                    <div class="container">
+                        <div class="wsite-section-elements">
+                            <div>
+                                <div id="102089796384473003" align="left" style="width: 100%; overflow-y: hidden;">
+                                    <h1 class="wcustomhtml">ai3C - iPhone維修案例分享</h1>
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+                            @for (var i = 0; i <(Convert.ToInt16(Math.Ceiling(Model.Count()/3.0))); i++)
+                            {
+
+
+                              
+                                if ( i!=int.Parse((Convert.ToInt16(Math.Ceiling(Model.Count()/3.0))-1).ToString()))
+                                {
+
+
+                                    <div>
+                                        <div class="wsite-multicol">
+                                            <div class="wsite-multicol-table-wrap" style="margin:0 -5px;">
+                                                <table class="wsite-multicol-table">
+                                                    <tbody class="wsite-multicol-tbody">
+                                                        <tr class="wsite-multicol-tr">
+
+                                                            @for (var k = i * 3; k <= i + 2; k++)
+                                                            {
+                                                                
+                                                                <td class="wsite-multicol-col" style="width:34.626705233923%; padding:0 5px;">
+
+
+
+                                                                    <div>
+                                                                        <div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:0px;margin-left:0px;margin-right:0px;text-align:center">
+                                                                            <a>
+                                                                                <img src="@Url.Content("~/Resource/Img/" + Model[k].Img)" alt="iPhone6 Plus 背蓋變形維修" style="width:322;max-width:100%">
+                                                                            </a>
+                                                                            <div style="display:block;font-size:90%"></div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="paragraph" style="text-align:left;">
+                                              
+                                                                        @Html.Raw(Model[k].Contents)
+                                                                    </div>
+
+
+
+                                                                </td>
+
+
+                                                            }
+
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div style="height: 20px; overflow: hidden; width: 100%;"></div>
+                                        <hr class="styled-hr" style="width:100%;">
+                                        <div style="height: 20px; overflow: hidden; width: 100%;"></div>
+                                    </div>
+                                }
+                                else
+                                { 
+
+                                    <div>
+                                        <div class="wsite-multicol">
+                                            <div class="wsite-multicol-table-wrap" style="margin:0 -5px;">
+                                                <table class="wsite-multicol-table">
+                                                    <tbody class="wsite-multicol-tbody">
+                                                        <tr class="wsite-multicol-tr">
+
+                                                            @for (var k = i * 3; k <(Model.Count()); k++)
+                                                            {
+                                                       
+                                                                <td class="wsite-multicol-col" style="width:34.626705233923%; padding:0 5px;">
+
+
+
+                                                                    <div>
+                                                                        <div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:0px;margin-left:0px;margin-right:0px;text-align:center">
+                                                                            <a>
+                                                                                <img src="@Url.Content("~/Resource/Img/" + Model[k].Img)" alt="iPhone6 Plus 背蓋變形維修" style="width:322;max-width:100%">
+                                                                            </a>
+                                                                            <div style="display:block;font-size:90%"></div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="paragraph" style="text-align:left;">
+                                                                        
+                                                   
+                                                                        @Html.Raw(Model[k].Contents)
+                                                                    </div>
+
+
+
+                                                                </td>
+
+
+                                                            }
+
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
+
+                                }
+
+
+
+
+
+
+
+
+
+                            }
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div><!-- end main-wrap -->

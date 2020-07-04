@@ -28,19 +28,22 @@ namespace Web_AppleBar.Models
         public virtual DbSet<AppleRecycle_IPad> AppleRecycle_IPad { get; set; }
         public virtual DbSet<AppleRecycle_IPhone> AppleRecycle_IPhone { get; set; }
         public virtual DbSet<AppleRecycle_Mac> AppleRecycle_Mac { get; set; }
-        public virtual DbSet<Navigation> Navigation { get; set; }
-        public virtual DbSet<News> News { get; set; }
-        public virtual DbSet<RepairCase_IPad> RepairCase_IPad { get; set; }
-        public virtual DbSet<RepairCase_IPhone> RepairCase_IPhone { get; set; }
-        public virtual DbSet<RepairePriceInfo_Board> RepairePriceInfo_Board { get; set; }
-        public virtual DbSet<RepairePriceInfo_HomeDelivery> RepairePriceInfo_HomeDelivery { get; set; }
-        public virtual DbSet<RepairePriceInfo_Mac> RepairePriceInfo_Mac { get; set; }
-        public virtual DbSet<RepairPriceInfo_IPhone> RepairPriceInfo_IPhone { get; set; }
-        public virtual DbSet<RrpairCase_Board> RrpairCase_Board { get; set; }
         public virtual DbSet<IPhoneRepair_BatteryRepaire> IPhoneRepair_BatteryRepaire { get; set; }
         public virtual DbSet<IPhoneRepair_BoardRepair> IPhoneRepair_BoardRepair { get; set; }
         public virtual DbSet<IPhoneRepair_SoakingRepair> IPhoneRepair_SoakingRepair { get; set; }
         public virtual DbSet<MacBookRepair_SoakingRepair> MacBookRepair_SoakingRepair { get; set; }
+        public virtual DbSet<Navigation> Navigation { get; set; }
+        public virtual DbSet<News> News { get; set; }
+        public virtual DbSet<RepairCase_IPad> RepairCase_IPad { get; set; }
+        public virtual DbSet<RepairCase_IPhone> RepairCase_IPhone { get; set; }
+        public virtual DbSet<RepairCase_MacBook> RepairCase_MacBook { get; set; }
+        public virtual DbSet<RepairPriceInfo_Board> RepairPriceInfo_Board { get; set; }
+        public virtual DbSet<RepairPriceInfo_HomeDelivery> RepairPriceInfo_HomeDelivery { get; set; }
+        public virtual DbSet<RepairPriceInfo_IPad> RepairPriceInfo_IPad { get; set; }
+        public virtual DbSet<RepairPriceInfo_IPhone> RepairPriceInfo_IPhone { get; set; }
+        public virtual DbSet<RepairPriceInfo_Mac> RepairPriceInfo_Mac { get; set; }
         public virtual DbSet<SubNavigation> SubNavigation { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<MacUpgrade> MacUpgrade { get; set; }
     }
 }

@@ -12,13 +12,10 @@ namespace Web_AppleBar.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SubNavigation
+    public partial class RepairPriceInfo_Board
     {
-        public string NavID { get; set; }
         public string ID { get; set; }
-        public string Name { get; set; }
-        public string URL { get; set; }
-    
-        public virtual Navigation Navigation { get; set; }
+        public string Contents { get; set; }
+        public string Img { get; set; }
     }
 }

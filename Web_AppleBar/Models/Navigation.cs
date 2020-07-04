@@ -14,8 +14,17 @@ namespace Web_AppleBar.Models
     
     public partial class Navigation
     {
-        public int ID { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Navigation()
+        {
+            this.SubNavigation = new HashSet<SubNavigation>();
+        }
+    
+        public string ID { get; set; }
         public string Name { get; set; }
         public string URL { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SubNavigation> SubNavigation { get; set; }
     }
 }

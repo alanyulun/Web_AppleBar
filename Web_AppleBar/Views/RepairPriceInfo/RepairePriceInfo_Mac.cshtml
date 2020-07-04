@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Web_AppleBar.Models.RepairPriceInfo_Mac>
+﻿@model IEnumerable<Web_AppleBar.Models.RepairePriceInfo_Mac>
 
 <div class="custom-page ng-isolate-scope" ga-page-view="">
     <div class="container global-primary container-full-width ">
@@ -15,8 +15,10 @@
                         <div class="box-info box-info-width-full" style="padding:0;">
                             <!-- Redner grid item partial -->
 
-                            <div class="editor-boxify-image-wrapper boxify-image-wrapper image-container margin-bottomless">
-                                <img class="sl-lazy-image" src="~/Resource/Img/mac-repair.jpg" alt="">
+                            <div class="editor-boxify-image-wrapper boxify-image-wrapper image-container
+    margin-bottomless
+    ">
+                                <img class="sl-lazy-image" src="~/Resource/Img/mac-repair-main.jpg" alt="">
 
 
                             </div>
@@ -50,8 +52,10 @@
                         <div class="box-info " style="">
                             <!-- Redner grid item partial -->
 
-                            <div class="editor-boxify-image-wrapper boxify-image-wrapper image-container margin-bottomless">
-                                <img class="sl-lazy-image" src="@Url.Content("~/Resource/Img/" + @item.Img+".jpg")" />
+                            <div class="editor-boxify-image-wrapper boxify-image-wrapper image-container
+    margin-bottomless
+    ">
+                                <img class="sl-lazy-image" src="@Url.Content("~/Resource/Img/" + @item.Img)" />
 
                             </div>
 
@@ -67,6 +71,11 @@
             </div> <!-- End of row -->
         </div> <!-- End of container-md-height -->
     </div> <!-- End of container -->
+
+
+
     }
+
+
 </div>
 

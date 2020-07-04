@@ -12,7 +12,7 @@ namespace Web_AppleBar.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RepairePriceInfo_Board
+    public partial class RepairPriceInfo_HomeDelivery
     {
         public string ID { get; set; }
         public string Contents { get; set; }

@@ -19,7 +19,7 @@ namespace Web_AppleBar.Controllers
 
         public ActionResult RepairePriceInfo_Mac()
         {
-            var img=db.RepairePriceInfo_Mac.Where(m => m.ID !="0001").ToList();
+            var img=db.RepairPriceInfo_Mac.Where(m => m.ID !="0001").ToList();
 
             return View(img);
         }

@@ -170,8 +170,8 @@
     <Content Include="JS\ZsqLc6-5FQP.js" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -1015,8 +1015,11 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IPhoneRepairController.cs" />
     <Compile Include="Controllers\MacBookRepairController.cs" />
+    <Compile Include="Controllers\MacUpgrafeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\RepairCaseController.cs" />
     <Compile Include="Controllers\RepairController.cs" />
+    <Compile Include="Controllers\RepairPriceInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1039,6 +1042,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MacBookRepair_SoakingRepair.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MacUpgrade.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
@@ -1068,24 +1074,31 @@
     <Compile Include="Models\RepairCase_IPhone.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RepairePriceInfo_Board.cs">
+    <Compile Include="Models\RepairCase_MacBook.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RepairePriceInfo_HomeDelivery.cs">
+    <Compile Include="Models\RepairPriceInfo_Board.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RepairePriceInfo_Mac.cs">
+    <Compile Include="Models\RepairPriceInfo_HomeDelivery.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RepairPriceInfo_IPad.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RepairPriceInfo_IPhone.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\RrpairCase_Board.cs">
+    <Compile Include="Models\RepairPriceInfo_Mac.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SubNavigation.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ViewModel\MacUpgradeVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1112,6 +1125,16 @@
     <Content Include="Views\IPhoneRepair\BatteryRepair.cshtml" />
     <Content Include="Views\IPhoneRepair\SoakingRepair.cshtml" />
     <Content Include="Views\MacBookRepair\SoakingRepair.cshtml" />
+    <Content Include="Views\MacUpgrade\MacUpgrade.cshtml" />
+    <Content Include="Views\RepairCase\RepairCase_IPad.cshtml" />
+    <Content Include="Views\RepairCase\RepairCase_IPhone.cshtml" />
+    <Content Include="Views\RepairCase\RepairCase_MacBook.cshtml" />
+    <Content Include="Views\RepairPriceInfo\Index.cshtml" />
+    <Content Include="Views\RepairPriceInfo\RepairePriceInfo_Board.cshtml" />
+    <Content Include="Views\RepairPriceInfo\RepairePriceInfo_HomeDelivery.cshtml" />
+    <Content Include="Views\RepairPriceInfo\RepairePriceInfo_IPad.cshtml" />
+    <Content Include="Views\RepairPriceInfo\RepairePriceInfo_IPhone.cshtml" />
+    <Content Include="Views\RepairPriceInfo\RepairePriceInfo_Mac.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

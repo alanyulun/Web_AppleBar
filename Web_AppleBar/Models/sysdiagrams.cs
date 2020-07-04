@@ -12,13 +12,12 @@ namespace Web_AppleBar.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SubNavigation
+    public partial class sysdiagrams
     {
-        public string NavID { get; set; }
-        public string ID { get; set; }
-        public string Name { get; set; }
-        public string URL { get; set; }
-    
-        public virtual Navigation Navigation { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

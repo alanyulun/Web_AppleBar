@@ -12,10 +12,11 @@ namespace Web_AppleBar.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RepairePriceInfo_HomeDelivery
+    public partial class MacUpgrade
     {
         public string ID { get; set; }
         public string Contents { get; set; }
+        public string ImgType { get; set; }
         public string Img { get; set; }
     }
 }
