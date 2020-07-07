@@ -10,17 +10,18 @@ namespace Web_AppleBar.Controllers
 {
     public class MacUpgradeController : Controller
     {
-        private AppleBar_dbEntities db = new AppleBar_dbEntities();
+        private AppleBar_db_200706Entities db = new AppleBar_db_200706Entities();
 
         // GET: MacUpgrafe
         public ActionResult MacUpgrade()
         {
-            var main=db.MacUpgrade.Where(m => m.ImgType == "main").FirstOrDefault();
+            /*var main=db.MacUpgrade.Where(m => m.ImgType == "main").FirstOrDefault();
             var sub= db.MacUpgrade.Where(m => m.ImgType == "sub").ToList();
 
             var result = new MacUpgradeVM { macUpgradeMain = main, macUpgradeSub = sub };
 
-            return View(result);
+            return View(result);*/
+            return View();
         }
     }
 }

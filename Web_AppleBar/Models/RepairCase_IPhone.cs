@@ -12,9 +12,11 @@ namespace Web_AppleBar.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RepairCase_IPhone
+    public partial class RepairCase_Iphone
     {
         public string ID { get; set; }
+        public string Model { get; set; }
+        public string Malfunction { get; set; }
         public string Contents { get; set; }
         public string Img { get; set; }
     }

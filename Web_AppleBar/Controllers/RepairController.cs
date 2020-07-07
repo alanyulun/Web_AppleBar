@@ -9,7 +9,7 @@ namespace Web_AppleBar.Controllers
 {
     public class RepairController : Controller
     {
-        private AppleBar_dbEntities db = new AppleBar_dbEntities();
+        private AppleBar_db_200706Entities db = new AppleBar_db_200706Entities();
 
         // GET: Repair
         public ActionResult Index()
@@ -19,9 +19,10 @@ namespace Web_AppleBar.Controllers
 
         public ActionResult RepairePriceInfo_Mac()
         {
-            var img=db.RepairPriceInfo_Mac.Where(m => m.ID !="0001").ToList();
+            //var img=db.RepairPriceInfo_Mac.Where(m => m.ID !="0001").ToList();
 
-            return View(img);
+            //return View(img);
+            return View();
         }
     }
 }

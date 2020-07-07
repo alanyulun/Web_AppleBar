@@ -9,7 +9,7 @@ namespace Web_AppleBar.Controllers
 {
     public class MacBookRepairController : Controller
     {
-        private AppleBar_dbEntities db = new AppleBar_dbEntities();
+        private AppleBar_db_200706Entities db = new AppleBar_db_200706Entities();
 
         // GET: MacBookRepair
         public ActionResult Index()
@@ -19,7 +19,7 @@ namespace Web_AppleBar.Controllers
 
         public ActionResult SoakingRepair()
         {
-            var Data = db.MacBookRepair_SoakingRepair.ToList();
+            var Data = db.MacbookRepair_Soaking.ToList();
 
             return View(Data);
         }

@@ -12,9 +12,10 @@ namespace Web_AppleBar.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RepairPriceInfo_Mac
+    public partial class IphoneRepair_Battery
     {
         public string ID { get; set; }
+        public string Title { get; set; }
         public string Contents { get; set; }
         public string Img { get; set; }
     }

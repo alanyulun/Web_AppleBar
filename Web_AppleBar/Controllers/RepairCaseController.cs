@@ -9,40 +9,29 @@ namespace Web_AppleBar.Controllers
 {
     public class RepairCaseController : Controller
     {
-
-        private AppleBar_dbEntities db = new AppleBar_dbEntities();
-
-
+        private AppleBar_db_200706Entities db = new AppleBar_db_200706Entities();
 
         public ActionResult RepairCase_IPhone()
         {
-            var repairCase_IPhones = db.RepairCase_IPhone.ToList();
-
-
+            var repairCase_IPhones = db.RepairCase_Iphone.ToList();
 
             return View(repairCase_IPhones);
         }
 
         public ActionResult RepairCase_IPad()
         {
-            var repairCase_IPads = db.RepairCase_IPad.ToList();
+            var repairCase_IPads = db.RepairCase_Ipad.ToList();
 
 
 
             return View(repairCase_IPads);
         }
 
-
         public ActionResult RepairCase_MacBook()
         {
-            var repairCase_Boards = db.RepairCase_MacBook.ToList();
-
-
+            var repairCase_Boards = db.RepairCase_Macbook.ToList();
 
             return View(repairCase_Boards);
         }
-
-
-
     }
 }

@@ -12,12 +12,11 @@ namespace Web_AppleBar.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class News
+    public partial class IphoneRepair_Soaking
     {
         public string ID { get; set; }
         public string Title { get; set; }
         public string Contents { get; set; }
         public string Img { get; set; }
-        public System.DateTime DateTime { get; set; }
     }
 }

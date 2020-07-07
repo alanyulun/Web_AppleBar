@@ -9,7 +9,7 @@ namespace Web_AppleBar.Controllers
 {
     public class NewsController : Controller
     {
-        private AppleBar_dbEntities db = new AppleBar_dbEntities();
+        private AppleBar_db_200706Entities db = new AppleBar_db_200706Entities();
 
         // GET: News
         public ActionResult Index()
@@ -19,9 +19,10 @@ namespace Web_AppleBar.Controllers
 
         public ActionResult News()
         {
-            var News = db.News.ToList();
+            //var News = db.News.ToList();
 
-            return View(News);
+            //return View(News);
+            return View();
         }
     }
 }
