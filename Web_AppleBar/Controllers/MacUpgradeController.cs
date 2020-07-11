@@ -15,12 +15,10 @@ namespace Web_AppleBar.Controllers
         // GET: MacUpgrafe
         public ActionResult MacUpgrade()
         {
-            var main=db.MacUpgrade.Where(m => m.ImgType == "main").FirstOrDefault();
-            var sub= db.MacUpgrade.Where(m => m.ImgType == "sub").ToList();
 
-            var result = new MacUpgradeVM { macUpgradeMain = main, macUpgradeSub = sub };
+            var macUpgrades = db.MacUpgrade.ToList();
 
-            return View(result);
+            return View(macUpgrades);
         }
     }
 }

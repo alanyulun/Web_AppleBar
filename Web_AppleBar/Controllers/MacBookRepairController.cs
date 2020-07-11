@@ -19,7 +19,7 @@ namespace Web_AppleBar.Controllers
 
         public ActionResult SoakingRepair()
         {
-            var Data = db.MacBookRepair_SoakingRepair.ToList();
+            var Data = db.MacbookRepair_Soaking.ToList();
 
             return View(Data);
         }

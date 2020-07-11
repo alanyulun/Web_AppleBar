@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Web_AppleBar.Models.IPhoneRepair_BatteryRepaire>
+﻿@model IEnumerable<Web_AppleBar.Models.IphoneRepair_Battery>
 
     <div class="site-canvas">
         <div class="main-wrap">
@@ -40,7 +40,7 @@
                                                             <td class="wsite-multicol-col" style="width:28.717948717949%; padding:0 15px;">
                                                                 <div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:0px;margin-left:0px;margin-right:0px;text-align:left">
                                                                     <a>
-                                                                        <img src="CSS/1-1_2.png" alt="iPhone收機前初步評估" style="width:auto;max-width:100%">
+                                                                        <img src="@Url.Content("~/Resource/Img/" + item.Img)" alt="iPhone收機前初步評估" style="width:auto;max-width:100%">
                                                                     </a>
                                                                     <div style="display:block;font-size:90%"></div>
                                                                 </div>

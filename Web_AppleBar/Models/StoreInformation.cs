@@ -12,12 +12,15 @@ namespace Web_AppleBar.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class IPhoneRepair_BoardRepair
+    public partial class StoreInformation
     {
         public string ID { get; set; }
-        public string Title { get; set; }
-        public string Contents { get; set; }
-        public string ImgType { get; set; }
+        public string Area { get; set; }
+        public string BusinessHours { get; set; }
+        public string Address { get; set; }
+        public string Tel { get; set; }
+        public string Services { get; set; }
+        public string branchStore { get; set; }
         public string Img { get; set; }
     }
 }

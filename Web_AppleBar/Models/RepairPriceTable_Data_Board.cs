@@ -12,12 +12,13 @@ namespace Web_AppleBar.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class RepairPriceTable_Data_Board
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public string RowID { get; set; }
+        public string ColID { get; set; }
+        public string Data { get; set; }
+    
+        public virtual RepairPriceTable_Col_Board RepairPriceTable_Col_Board { get; set; }
+        public virtual RepairPriceTable_Row_Board RepairPriceTable_Row_Board { get; set; }
     }
 }

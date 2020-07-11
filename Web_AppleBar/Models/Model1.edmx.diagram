@@ -4,28 +4,45 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a78162ba45da4cf08410c16dd740fd11" Name="Diagram1">
-        <EntityTypeShape EntityType="AppleBar_dbModel.AppleRecycle_IPad" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.AppleRecycle_IPhone" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.AppleRecycle_Mac" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.IPhoneRepair_BatteryRepaire" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.IPhoneRepair_BoardRepair" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.IPhoneRepair_SoakingRepair" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.MacBookRepair_SoakingRepair" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.Navigation" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.News" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.RepairCase_IPad" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.RepairCase_IPhone" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.RepairCase_MacBook" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceInfo_Board" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceInfo_HomeDelivery" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceInfo_IPad" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceInfo_IPhone" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceInfo_Mac" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.SubNavigation" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.sysdiagrams" Width="1.5" PointX="6.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AppleBar_dbModel.MacUpgrade" Width="1.5" PointX="8.75" PointY="9.75" IsExpanded="true" />
-        <AssociationConnector Association="AppleBar_dbModel.FK_SubNavigation_Navigation" ManuallyRouted="false" />
+      <Diagram DiagramId="e33ce6069dce4b90a02379814eb317a9" Name="Diagram1">
+        <EntityTypeShape EntityType="AppleBar_dbModel.AppleRecycle_Ipad" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.AppleRecycle_Iphone" Width="1.5" PointX="2.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.AppleRecycle_Mac" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.IphoneRepair_Battery" Width="1.5" PointX="9.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.IphoneRepair_Board" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.IphoneRepair_Soaking" Width="1.5" PointX="11.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.MacbookRepair_Soaking" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairCase_Ipad" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairCase_Iphone" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairCase_Macbook" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Col_Board" Width="1.5" PointX="7.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Col_HomeDelivery" Width="1.5" PointX="7.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Col_Ipad" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Col_Iphone" Width="1.5" PointX="2.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Col_Mac" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Data_Board" Width="1.5" PointX="10" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Data_HomeDelivery" Width="1.5" PointX="10" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Data_Ipad" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Data_Iphone" Width="1.5" PointX="5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Data_Mac" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Row_Board" Width="1.5" PointX="7.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Row_HomeDelivery" Width="1.5" PointX="7.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Row_Ipad" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Row_Iphone" Width="1.5" PointX="2.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.RepairPriceTable_Row_Mac" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="AppleBar_dbModel.FK_RepairPriceTable_Data_Board_RepairPriceTable_Col_Board" ManuallyRouted="false" />
+        <AssociationConnector Association="AppleBar_dbModel.FK_RepairPriceTable_Data_HomeDelivery_RepairPriceTable_Col_HomeDelivery" ManuallyRouted="false" />
+        <AssociationConnector Association="AppleBar_dbModel.FK_RepairPriceTable_Data_Ipad_RepairPriceTable_Col_Ipad" ManuallyRouted="false" />
+        <AssociationConnector Association="AppleBar_dbModel.FK_RepairPriceTable_Data_Iphone_RepairPriceTable_Col_Iphone" ManuallyRouted="false" />
+        <AssociationConnector Association="AppleBar_dbModel.FK_RepairPriceTable_Data_Mac_RepairPriceTable_Col_Mac" ManuallyRouted="false" />
+        <AssociationConnector Association="AppleBar_dbModel.FK_RepairPriceTable_Data_Board_RepairPriceTable_Row_Board" ManuallyRouted="false" />
+        <AssociationConnector Association="AppleBar_dbModel.FK_RepairPriceTable_Data_HomeDelivery_RepairPriceTable_Row_HomeDelivery" ManuallyRouted="false" />
+        <AssociationConnector Association="AppleBar_dbModel.FK_RepairPriceTable_Data_Ipad_RepairPriceTable_Row_Ipad" ManuallyRouted="false" />
+        <AssociationConnector Association="AppleBar_dbModel.FK_RepairPriceTable_Data_Iphone_RepairPriceTable_Row_Iphone" ManuallyRouted="false" />
+        <AssociationConnector Association="AppleBar_dbModel.FK_RepairPriceTable_Data_Mac_RepairPriceTable_Row_Mac" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.News" Width="1.5" PointX="12.375" PointY="6.75" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.MacUpgrade" Width="1.5" PointX="10.375" PointY="12.75" />
+        <EntityTypeShape EntityType="AppleBar_dbModel.StoreInformation" Width="1.5" PointX="12.375" PointY="12.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

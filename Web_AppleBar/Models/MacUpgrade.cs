@@ -15,8 +15,9 @@ namespace Web_AppleBar.Models
     public partial class MacUpgrade
     {
         public string ID { get; set; }
+        public string Title { get; set; }
+        public string Model { get; set; }
         public string Contents { get; set; }
-        public string ImgType { get; set; }
         public string Img { get; set; }
     }
 }

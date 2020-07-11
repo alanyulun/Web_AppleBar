@@ -16,7 +16,7 @@ namespace Web_AppleBar.Controllers
 
         public ActionResult RepairCase_IPhone()
         {
-            var repairCase_IPhones = db.RepairCase_IPhone.ToList();
+            var repairCase_IPhones = db.RepairCase_Iphone.ToList();
 
 
 
@@ -25,7 +25,7 @@ namespace Web_AppleBar.Controllers
 
         public ActionResult RepairCase_IPad()
         {
-            var repairCase_IPads = db.RepairCase_IPad.ToList();
+            var repairCase_IPads = db.RepairCase_Ipad.ToList();
 
 
 
@@ -35,7 +35,7 @@ namespace Web_AppleBar.Controllers
 
         public ActionResult RepairCase_MacBook()
         {
-            var repairCase_Boards = db.RepairCase_MacBook.ToList();
+            var repairCase_Boards = db.RepairCase_Macbook.ToList();
 
 
 

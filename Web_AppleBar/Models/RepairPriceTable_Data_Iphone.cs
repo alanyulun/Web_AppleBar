@@ -12,10 +12,13 @@ namespace Web_AppleBar.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RepairPriceInfo_Board
+    public partial class RepairPriceTable_Data_Iphone
     {
-        public string ID { get; set; }
-        public string Contents { get; set; }
-        public string Img { get; set; }
+        public string RowID { get; set; }
+        public string ColID { get; set; }
+        public string Data { get; set; }
+    
+        public virtual RepairPriceTable_Col_Iphone RepairPriceTable_Col_Iphone { get; set; }
+        public virtual RepairPriceTable_Row_Iphone RepairPriceTable_Row_Iphone { get; set; }
     }
 }

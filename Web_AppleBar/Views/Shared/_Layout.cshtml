@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>Web_AppleBar</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.8.3.js"></script>
@@ -22,6 +22,8 @@
     @System.Web.Optimization.Scripts.Render("~/bundles/modernizr")
     @RenderSection("css", false)
     <link href="~/CSS/application-8a44c241bc61eee93644556a0f0992100aeebcc0b907a7cc6d2511a8b6ef01db.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="@Url.Content("~/Resource/Img/LOGO-黑去背.jpg")">
 </head>
 <body>
 
@@ -42,100 +44,112 @@
 
         <!-- mobile logo -->
         <div class="mobile-logo">
-            <a href="https://www.applebar.com.tw/" class="sl-lazy-image" style="background-image: url(&#39;https://shoplineimg.com/566a8670e37ec6b552000033/567232fb69702d59d26d3200/x40.webp?source_format=png&#39;)"></a>
+            <a href="/Home/HomePage" class="sl-lazy-image" style="background-image: url(&#39;@Url.Content("~/Resource/Img/LOGO-黑去背.jpg"))"></a>
         </div>
     </div>
 
     <div class="body-wrapper">
         <div class="body-content mobile-revamp-navigation">
+
+            <div class="navbar-header-wrapper" style="display: inline-block;width: 30%">
+                <div class="container">
+                    <div class="navbar-header" style="display:inline-block;vertical-align: middle">
+                        <a href="/Home/HomePage">
+                            <img src="@Url.Content("~/Resource/Img/LOGO-黑去背.jpg")" class="logo-image sl-lazy-image" data-resizing-segment="140">
+                        </a>
+                    </div>
+                </div> <!--container-->
+            </div>
             <nav class="main-navigation">
                 <!---navigation -->
                 <div class="navbar-wrapper">
                     <div class="navbar hidden-xs" role="navigation">
+
+
                         <div class="navbar-menu">
                             <div class="container">
                                 <div class="navbar-menu hidden-xs">
                                     <ul class="text-primary-color" style="text-align:center">
                                         <li link-highlight="/pages/最新活動">
-                                            <a link-highlight="/pages/最新活動" href="https://www.applebar.com.tw/pages/%E6%9C%80%E6%96%B0%E6%B4%BB%E5%8B%95" target="" ng-non-bindable="">最新活動</a>
+                                            <a link-highlight="/pages/最新活動" href="/News/News" target="" ng-non-bindable="">最新活動</a>
                                         </li>
 
                                         <li class="nav-dropdown" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2">
-                                            <a class="nav-dropdown-toggle" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2" href="Apple產品常見故障一覽 - ai3C專業維修中心.html" target="" ng-non-bindable="">IPHONE維修 <span class="caret"></span></a>
+                                            <a class="nav-dropdown-toggle" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2" href="" target="" ng-non-bindable="">IPHONE維修 <span class="caret"></span></a>
                                             <ul class="nav-dropdown-menu">
                                                 <li link-highlight="/pages/IPHONE電池維修">
-                                                    <a link-highlight="/pages/IPHONE電池維修" href="iPhone電池舊換新優惠30分鐘完修 - ai3C專業維修中心.html" target="" ng-non-bindable="">IPHONE電池維修</a>
+                                                    <a link-highlight="IPHONE電池維修" href="/IPhoneRepair/BatteryRepair" target="" ng-non-bindable="">IPHONE電池維修</a>
                                                 </li>
-                                                <li link-highlight="/pages/IPHONE進水急救">
-                                                    <a link-highlight="/pages/IPHONE進水急救" href="iPhone進水怎麼急救？ - ai3C專業維修中心.html" target="" ng-non-bindable="">IPHONE進水急救</a>
+                                                <li link-highlight="/IPhoneRepair/IPHONE進水急救">
+                                                    <a link-highlight="/pages/IPHONESoakingRepair" href="/IPhoneRepair/SoakingRepair" target="" ng-non-bindable="">IPHONE進水急救</a>
                                                 </li>
                                                 <li link-highlight="/pages/精密主版維修">
-                                                    <a link-highlight="/pages/精密主版維修" href="iPhone. iPad. Mac精密主機板維修 - ai3C專業維修中心.html" target="" ng-non-bindable="">精密主版維修</a>
+                                                    <a link-highlight="/pages/精密主版維修" href="/IPhoneRepair/BoardRepair" target="" ng-non-bindable="">精密主版維修</a>
                                                 </li>
                                             </ul>
                                         </li>
 
                                         <li class="nav-dropdown" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2">
-                                            <a class="nav-dropdown-toggle" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2" href="MacBook常見故障問題 - ai3C專業維修中心.html" target="" ng-non-bindable="">MAC維修 <span class="caret"></span></a>
+                                            <a class="nav-dropdown-toggle" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2" href="" target="" ng-non-bindable="">MAC維修 <span class="caret"></span></a>
                                             <ul class="nav-dropdown-menu">
-                                                <li link-highlight="/pages/MAC進水維修維修">
-                                                    <a link-highlight="/pages/MAC進水維修維修" href="MacBook進水如何搶救_常見鍵盤按鍵失效、循跡板故障、主機板故障開不了機&#21407 - ai3C專業維修中心.html" target="" ng-non-bindable="">MacBooK進水維修維修</a>
+                                                <li link-highlight="/pages/MAC進水維修">
+                                                    <a link-highlight="/pages/MAC進水維修" href="/MacBookRepair/SoakingRepair" target="" ng-non-bindable="">MacBooK進水維修</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li class="nav-dropdown" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2">
-                                            <a class="nav-dropdown-toggle" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2" href="https://www.applebar.com.tw/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2" target="" ng-non-bindable="">APPLE回收 <span class="caret"></span></a>
+                                            <a class="nav-dropdown-toggle" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2" href="" target="" ng-non-bindable="">APPLE回收 <span class="caret"></span></a>
                                             <ul class="nav-dropdown-menu">
                                                 <li link-highlight="/pages/iphone">
-                                                    <a link-highlight="/pages/iphone" href="https://www.applebar.com.tw/pages/iphone" target="" ng-non-bindable="">iPhone 回收</a>
+                                                    <a link-highlight="/pages/iphone" href="/AppleRecycle/AppleRecycle_Iphone" target="" ng-non-bindable="">iPhone 回收</a>
                                                 </li>
                                                 <li link-highlight="/pages/ipad">
-                                                    <a link-highlight="/pages/ipad" href="https://www.applebar.com.tw/pages/ipad" target="" ng-non-bindable="">iPad 回收</a>
+                                                    <a link-highlight="/pages/ipad" href="/AppleRecycle/AppleRecycle_Ipad" target="" ng-non-bindable="">iPad 回收</a>
                                                 </li>
                                                 <li link-highlight="/pages/mac-回收">
-                                                    <a link-highlight="/pages/mac-回收" href="https://www.applebar.com.tw/pages/mac-%E5%9B%9E%E6%94%B6" target="" ng-non-bindable="">Mac 回收</a>
+                                                    <a link-highlight="/pages/mac-回收" href="/AppleRecycle/AppleRecycle_Mac" target="" ng-non-bindable="">Mac 回收</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li link-highlight="/pages/mac升級">
-                                            <a link-highlight="/pages/mac升級" href="Mac升級.html" target="" ng-non-bindable="">Mac升級</a>
+                                            <a link-highlight="/pages/mac升級" href="/MacUpgrade/MacUpgrade" target="" ng-non-bindable="">Mac升級</a>
                                         </li>
                                         <li class="nav-dropdown" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2">
-                                            <a class="nav-dropdown-toggle" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2" href="ai3C 維修MacBook筆電實例 - ai3C專業維修中心.html" target="" ng-non-bindable="">維修案例 <span class="caret"></span></a>
+                                            <a class="nav-dropdown-toggle" link-highlight="/pages/httpswwwapplebarcomtwpagese694b6e8b3bce583b9e6a0bce8a1a8-2" href="" target="" ng-non-bindable="">維修案例 <span class="caret"></span></a>
                                             <ul class="nav-dropdown-menu">
                                                 <li link-highlight="/pages/IPHONE維修案例">
-                                                    <a link-highlight="/pages/IPHONE維修案例" href="ai3C蘋果維修實例 - iPhone手機 - ai3C專業維修中心.html" target="" ng-non-bindable="">IPHONE維修案例</a>
+                                                    <a link-highlight="/pages/IPHONE維修案例" href="/RepairCase/RepairCase_IPhone" target="" ng-non-bindable="">IPHONE維修案例</a>
                                                 </li>
                                                 <li link-highlight="/pages/IPAD維修案例">
-                                                    <a link-highlight="/pages/IPAD維修案例" href="ai3C iPad 平板電腦維修實例 - ai3C專業維修中心.html" target="" ng-non-bindable="">IPAD維修案例</a>
+                                                    <a link-highlight="/pages/IPAD維修案例" href="/RepairCase/RepairCase_IPad" target="" ng-non-bindable="">IPAD維修案例</a>
                                                 </li>
                                                 <li link-highlight="/pages/Macbook維修案例">
-                                                    <a link-highlight="/pages/Macbook維修案例" href="ai3C 維修MacBook筆電實例 - ai3C專業維修中心.html" target="" ng-non-bindable="">精密主版維修</a>
+                                                    <a link-highlight="/pages/Macbook維修案例" href="/RepairCase/RepairCase_MacBook" target="" ng-non-bindable="">Macbook維修案例</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li class="nav-dropdown" link-highlight="/pages/維修價目表">
-                                            <a class="nav-dropdown-toggle" link-highlight="/pages/維修價目表升級" href="iPhone維修.html" target="" ng-non-bindable="">維修價目表<span class="caret"></span></a>
+                                            <a class="nav-dropdown-toggle" link-highlight="/pages/維修價目表升級" href="#" target="" ng-non-bindable="">維修價目表<span class="caret"></span></a>
                                             <ul class="nav-dropdown-menu">
                                                 <li link-highlight="/pages/IPHONE維修">
-                                                    <a link-highlight="/pages/IPHONE維修" href="ai3C蘋果維修實例 - iPhone手機 - ai3C專業維修中心.html" target="" ng-non-bindable="">IPHONE維修</a>
+                                                    <a link-highlight="/pages/IPHONE維修" href="/RepairPriceInfo/RepairPriceInfo_IPhone" target="" ng-non-bindable="">IPHONE維修</a>
                                                 </li>
                                                 <li link-highlight="/pages/IPAD維修">
-                                                    <a link-highlight="/pages/IPAD維修" href="ai3C iPad 平板電腦維修實例 - ai3C專業維修中心.html" target="" ng-non-bindable="">IPAD維修</a>
+                                                    <a link-highlight="/pages/IPAD維修" href="/RepairPriceInfo/RepairPriceInfo_IPad" target="" ng-non-bindable="">IPAD維修</a>
                                                 </li>
                                                 <li link-highlight="/pages/Mac維修">
-                                                    <a link-highlight="/pages/Mac維修" href="/Repair/RepairePriceInfo_Mac" target="" ng-non-bindable="">MAC維修</a>
+                                                    <a link-highlight="/pages/Mac維修" href="/RepairPriceInfo/RepairPriceInfo_Mac" target="" ng-non-bindable="">MAC維修</a>
                                                 </li>
                                                 <li link-highlight="/pages/主機板維修">
-                                                    <a link-highlight="/pages/主機板維修" href="ai3C 維修MacBook筆電實例 - ai3C專業維修中心.html" target="" ng-non-bindable="">主機板維修</a>
+                                                    <a link-highlight="/pages/主機板維修" href="/RepairPriceInfo/RepairPriceInfo_Board" target="" ng-non-bindable="">主機板維修</a>
                                                 </li>
                                                 <li link-highlight="/pages/宅配維修">
-                                                    <a link-highlight="/pages/宅配維修" href="ai3C 維修MacBook筆電實例 - ai3C專業維修中心.html" target="" ng-non-bindable="">宅配維修</a>
+                                                    <a link-highlight="/pages/宅配維修" href="/RepairPriceInfo/RepairPriceInfo_HomeDelivery" target="" ng-non-bindable="">宅配維修</a>
                                                 </li>
                                             </ul>
                                         </li>
                                         <li link-highlight="/pages/關於apple-bar">
-                                            <a link-highlight="/pages/關於apple-bar" href="https://www.applebar.com.tw/pages/%E9%97%9C%E6%96%BCapple-bar" target="" ng-non-bindable="">門市資訊</a>
+                                            <a link-highlight="/pages/關於apple-bar" href="/StoreInfo/StoreInfo" target="" ng-non-bindable="">門市資訊</a>
                                         </li>
                                         <li link-highlight="https://www.google.com/search?rlz=1C1CHBD_zh-TWTW884TW884&ei=omnTXtOCNe-Cr7wPhriT4AM&q=POWERFIX+&oq=POWERFIX+&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BQgAEM0COgQIABATOgYIABAKEBNQxwtY9Axg3BBoAHAAeACAATWIAZoBkgEBM5gBAKABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjT24W11t3pAhVvwYsBHQbcBDwQ4dUDCAw&uact=5">
                                             <a link-highlight="https://www.google.com/search?rlz=1C1CHBD_zh-TWTW884TW884&ei=omnTXtOCNe-Cr7wPhriT4AM&q=POWERFIX+&oq=POWERFIX+&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BQgAEM0COgQIABATOgYIABAKEBNQxwtY9Axg3BBoAHAAeACAATWIAZoBkgEBM5gBAKABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjT24W11t3pAhVvwYsBHQbcBDwQ4dUDCAw&uact=5" href="https://www.google.com/search?rlz=1C1CHBD_zh-TWTW884TW884&ei=omnTXtOCNe-Cr7wPhriT4AM&q=POWERFIX+&oq=POWERFIX+&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BQgAEM0COgQIABATOgYIABAKEBNQxwtY9Axg3BBoAHAAeACAATWIAZoBkgEBM5gBAKABAaoBB2d3cy13aXo&sclient=psy-ab&ved=0ahUKEwjT24W11t3pAhVvwYsBHQbcBDwQ4dUDCAw&uact=5" target="_blank" ng-non-bindable="">GOOGLE評論</a>
@@ -160,6 +174,8 @@
     <hr />
     <footer style="text-align:center">
         <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <a  href="/Home/Admin">後台</a>
+
     </footer>
 
 
@@ -172,8 +188,9 @@
 
 
 
-    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
     @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
     @System.Web.Optimization.Scripts.Render("~/bundles/bootstrap")

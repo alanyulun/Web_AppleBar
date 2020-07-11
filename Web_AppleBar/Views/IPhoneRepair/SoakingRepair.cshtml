@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Web_AppleBar.Models.IPhoneRepair_SoakingRepair>
+﻿@model IEnumerable<Web_AppleBar.Models.IphoneRepair_Soaking>
 
 <div class="site-canvas">
     <div class="main-wrap">
@@ -8,6 +8,22 @@
                     <div class="wsite-section-content">
                         <div class="container">
                             <div class="wsite-section-elements">
+                                <div class="wsite-multicol">
+                                    <div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+                                        <table class="wsite-multicol-table">
+                                            <tbody class="wsite-multicol-tbody">
+                                                <tr class="wsite-multicol-tr">
+                                                    <td class="wsite-multicol-col" style="width:62.222222222222%; padding:0 15px;">
+                                                        <h2 class="wsite-content-title" style="text-align:left;"><font color="#c2743b" size="6"><strong>專業判斷iPhone電池是否該更換的標準流程</strong></font></h2>
+                                                    </td>
+                                                    <td class="wsite-multicol-col" style="width:37.777777777778%; padding:0 15px;">
+                                                        <div class="paragraph" style="text-align:left;"><font color="#c23b3b" size="4">＊ 支援iOS 11.3電池健康度偵測 ＊</font><br><span><font color="#2a2a2a" size="4">技術嚴謹堅持，全程安心，保固卡保障長！</font></span></div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                                 @foreach (var item in Model)
                                 {
                                     <div>
@@ -24,7 +40,7 @@
                                                         <td class="wsite-multicol-col" style="width:28.717948717949%; padding:0 15px;">
                                                             <div class="wsite-image wsite-image-border-none " style="padding-top:0px;padding-bottom:0px;margin-left:0px;margin-right:0px;text-align:left">
                                                                 <a>
-                                                                    <img src="CSS/1-1_2.png" alt="iPhone收機前初步評估" style="width:auto;max-width:100%">
+                                                                    <img src="@Url.Content("~/Resource/Img/" + item.Img)" alt="iPhone收機前初步評估" style="width:auto;max-width:100%">
                                                                 </a>
                                                                 <div style="display:block;font-size:90%"></div>
                                                             </div>

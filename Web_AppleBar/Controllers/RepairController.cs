@@ -17,11 +17,10 @@ namespace Web_AppleBar.Controllers
             return View();
         }
 
-        public ActionResult RepairePriceInfo_Mac()
+        public ActionResult RepairPriceInfo_Mac()
         {
-            var img=db.RepairPriceInfo_Mac.Where(m => m.ID !="0001").ToList();
 
-            return View(img);
+            return View();
         }
     }
 }

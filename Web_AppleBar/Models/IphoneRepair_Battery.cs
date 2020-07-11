@@ -12,7 +12,7 @@ namespace Web_AppleBar.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class IPhoneRepair_SoakingRepair
+    public partial class IphoneRepair_Battery
     {
         public string ID { get; set; }
         public string Title { get; set; }

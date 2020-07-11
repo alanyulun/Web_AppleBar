@@ -18,6 +18,5 @@ namespace Web_AppleBar.Models
         public string Title { get; set; }
         public string Contents { get; set; }
         public string Img { get; set; }
-        public System.DateTime DateTime { get; set; }
     }
 }

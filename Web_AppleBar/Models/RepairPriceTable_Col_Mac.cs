@@ -12,19 +12,18 @@ namespace Web_AppleBar.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Navigation
+    public partial class RepairPriceTable_Col_Mac
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Navigation()
+        public RepairPriceTable_Col_Mac()
         {
-            this.SubNavigation = new HashSet<SubNavigation>();
+            this.RepairPriceTable_Data_Mac = new HashSet<RepairPriceTable_Data_Mac>();
         }
     
         public string ID { get; set; }
         public string Name { get; set; }
-        public string URL { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SubNavigation> SubNavigation { get; set; }
+        public virtual ICollection<RepairPriceTable_Data_Mac> RepairPriceTable_Data_Mac { get; set; }
     }
 }

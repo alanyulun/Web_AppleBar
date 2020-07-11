@@ -7,21 +7,18 @@ using Web_AppleBar.Models;
 
 namespace Web_AppleBar.Controllers
 {
-    public class NewsController : Controller
+    public class StoreInfoController : Controller
     {
+
         private AppleBar_dbEntities db = new AppleBar_dbEntities();
 
-        // GET: News
-        public ActionResult Index()
+        // GET: StoreInfo
+        public ActionResult StoreInfo()
         {
-            return View();
-        }
 
-        public ActionResult News()
-        {
-            var news = db.News.ToList();
-            
-            return View(news);
+  
+
+            return View(db.StoreInformation.ToList());
         }
     }
 }

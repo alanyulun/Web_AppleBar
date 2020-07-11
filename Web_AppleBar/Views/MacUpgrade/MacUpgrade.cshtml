@@ -1,80 +1,234 @@
-﻿@model Web_AppleBar.Models.ViewModel.MacUpgradeVM
+﻿@model IEnumerable<Web_AppleBar.Models.MacUpgrade>
 
-<div class="custom-page ng-isolate-scope" ga-page-view="">
-    <div class="container global-primary container-full-width ">
-        <div class="container-md-height" style="height: 100%; table-layout: fixed; width: 100%; margin-bottom: 2%; ">
-            <!-- height and width must be difined for td to size correctly -->
-            <div class="row row-md-height" style="height: 100%;">
-                <!-- Rendering page grid items -->
-                <div id="page-item-59ad1f0b9a76f017f500054c" class="item grid-image-item
+
+
+
+
+
+
+
+<div class="body-wrapper  ">
+    <div class="body-content mobile-revamp-navigation">
+
+
+
+        <!-- main Content -->
+        <div class="yield-wrapper">
+
+
+            <div class="custom-page" ga-page-view>
+
+
+
+
+                <div class="container global-primary  ">
+                    <div class="container-md-height" style="height: 100%; table-layout: fixed; width: 100%; margin-bottom: 2%; ">
+                        <!-- height and width must be difined for td to size correctly -->
+                        <div class="row row-md-height" style="height: 100%;">
+                            <!-- Rendering page grid items -->
+                            <div id="page-item-5a095b4b552115d55a000a05"
+                                 class="item grid-text-item
               col-xs-12
               col-md-12
               col-md-height
-              padding-h-none" style="vertical-align: top; height: 100%;">
-                    <div style="height: 100%;">
-                        <div class="box-info box-info-width-full" style="padding:0;">
-                            <!-- Redner grid item partial -->
-
-                            <div class="editor-boxify-image-wrapper boxify-image-wrapper image-container
-    margin-bottomless
-    ">
-                                <img class="sl-lazy-image" src="~/Resource/Img/@Model.macUpgradeMain.Img" alt="">
-
-
-                            </div>
-
-                            <!-- Redner grid item title -->
-                            <!-- Redner grid item content -->
-                            <!-- End of cache  -->
-                            <!-- Rendering express checkout default content -->
-                            <!-- End of rendering express checkout default content -->
-                        </div>
-                    </div>
-                </div>
-                <!-- End of rendering page grid items -->
-            </div> <!-- End of row -->
-        </div> <!-- End of container-md-height -->
-    </div> <!-- End of container -->
-
-    @foreach (var item in Model.macUpgradeSub)
-    {
-        <div class="container global-primary  ">
-            <div class="container-md-height" style="height: 100%; table-layout: fixed; width: 100%; margin-bottom: 2%; ">
-                <!-- height and width must be difined for td to size correctly -->
-                <div class="row row-md-height" style="height: 100%;">
-                    <!-- Rendering page grid items -->
-                    <div id="page-item-5ae6c4a610abb9ea7f0007d5" class="item grid-image-item
-              col-xs-12
-              col-md-12
-              col-md-height
-              " style="vertical-align: top; height: 100%;">
-                        <div style="height: 100%;">
-                            <div class="box-info " style="">
-                                <!-- Redner grid item partial -->
-
-                                <div class="editor-boxify-image-wrapper boxify-image-wrapper image-container
-    margin-bottomless
-    ">
-                                    <img class="sl-lazy-image" src="@Url.Content("~/Resource/Img/" + @item.Img)" />
-
+              "
+                                 style="vertical-align: top; height: 100%;">
+                                <div style="height: 100%;">
+                                    <div class="box-info " style="">
+                                        <!-- Redner grid item partial -->
+                                        <!-- Redner grid item title -->
+                                        <!-- Redner grid item content -->
+                                        <div class="description" ng-non-bindable>
+                                            <p style="text-align: center;">
+                                                <span style="font-size:48px;"><strong>最新消息</strong></span>
+                                            </p>
+                                        </div>
+                                        <!-- End of cache  -->
+                                        <!-- Rendering express checkout default content -->
+                                        <!-- End of rendering express checkout default content -->
+                                    </div>
                                 </div>
-
-                                <!-- Redner grid item title -->
-                                <!-- Redner grid item content -->
-                                <!-- End of cache  -->
-                                <!-- Rendering express checkout default content -->
-                                <!-- End of rendering express checkout default content -->
                             </div>
-                        </div>
-                    </div>
-                    <!-- End of rendering page grid items -->
-                </div> <!-- End of row -->
-            </div> <!-- End of container-md-height -->
-        </div> <!-- End of container -->
+                            <!-- End of rendering page grid items -->
+                        </div> <!-- End of row -->
+                    </div> <!-- End of container-md-height -->
+                </div> <!-- End of container -->
 
 
 
-    }
+
+
+                @foreach (var item in Model)
+                {
+
+
+
+
+
+
+
+
+                    <div class="container global-primary  ">
+                        <div class="container-md-height" style="height: 100%; table-layout: fixed; width: 100%; margin-bottom: 2%; ">
+                            <!-- height and width must be difined for td to size correctly -->
+                            <div class="row row-md-height" style="height: 100%;">
+                                <!-- Rendering page grid items -->
+                                <div id="page-item-5a77eecd72fdc00787000420"
+                                     class="item grid-image-item
+              col-xs-12
+              col-md-12
+              col-md-height
+              "
+                                     style="vertical-align: top; height: 100%;">
+                                    <div style="height: 100%;">
+                                        <div class="box-info " style="">
+                                            <!-- Redner grid item partial -->
+
+                                            <div class="editor-boxify-image-wrapper boxify-image-wrapper image-container
+    margin-bottomless
+    ">
+                                                <img class="sl-lazy-image"
+                                                     src="https://shoplineimg.com/566a8670e37ec6b552000033/5a77edf7d4e39551b5000397/400x.webp?source_format=jpg"
+                                                     alt="">
+
+
+                                            </div>
+
+                                            <!-- Redner grid item title -->
+                                            <!-- Redner grid item content -->
+                                            <!-- End of cache  -->
+                                            <!-- Rendering express checkout default content -->
+                                            <!-- End of rendering express checkout default content -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of rendering page grid items -->
+                            </div> <!-- End of row -->
+                        </div> <!-- End of container-md-height -->
+                    </div> <!-- End of container -->
+
+
+
+
+                    <div class="container global-primary  ">
+                        <div class="container-md-height" style="height: 100%; table-layout: fixed; width: 100%; margin-bottom: 2%; ">
+                            <!-- height and width must be difined for td to size correctly -->
+                            <div class="row row-md-height" style="height: 100%;">
+                                <!-- Rendering page grid items -->
+                                <div id="page-item-599d50f8d4e39533520011b1"
+                                     class="item grid-text-item
+              col-xs-12
+              col-md-4
+              col-md-height
+              "
+                                     style="vertical-align: top; height: 100%;">
+                                    <div style="height: 100%;">
+                                        <div class="box-info " style="">
+                                            <!-- Redner grid item partial -->
+                                            <!-- Redner grid item title -->
+                                            <div class="title" ng-non-bindable>
+                                                <p>
+                                                    <strong><span style="font-size:36px;">@item.Model</span></strong>
+                                                </p>
+                                            </div>
+                                            <!-- Redner grid item content -->
+                                            <div class="description" ng-non-bindable>
+                                                <div style="color: rgb(90, 90, 90); background-color: rgb(255, 255, 255);">
+                                                    <span style="font-weight: 700;">@item.Contents</span>
+                                                </div>
+
+                                                @*<div style="color: rgb(90, 90, 90); background-color: rgb(255, 255, 255);">
+                                                    <span style="line-height: 1.42857;">營業時間：星期一～星期日12:00－22:00</span>
+                                                </div>
+
+                                                <div style="color: rgb(90, 90, 90); background-color: rgb(255, 255, 255);">門市地址：台中市西區美村路一段150號</div>
+
+                                                <div style="color: rgb(90, 90, 90); background-color: rgb(255, 255, 255);">聯絡電話：(04) 2301-0045</div>
+
+                                                <div style="color: rgb(90, 90, 90); background-color: rgb(255, 255, 255);">提供刷卡服務</div>*@
+                                            </div>
+                                            <!-- End of cache  -->
+                                            <!-- Rendering express checkout default content -->
+                                            <!-- End of rendering express checkout default content -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="page-item-599d50f8d4e39533520011b0"
+                                     class="item grid-image-item
+              col-xs-12
+              col-md-4
+              col-md-height
+              "
+                                     style="vertical-align: top; height: 100%;">
+                                    <div style="height: 100%;">
+                                        <div class="box-info " style="">
+                                            <!-- Redner grid item partial -->
+
+                                            <div class="editor-boxify-image-wrapper boxify-image-wrapper image-container
+    margin-bottomless
+    ">
+                                                <img class="sl-lazy-image"
+                                                     src="@Url.Content("~/Resource/Img/" + @item.Img)"
+                                                     alt="">
+
+
+                                            </div>
+
+                                            <!-- Redner grid item title -->
+                                            <!-- Redner grid item content -->
+                                            <!-- End of cache  -->
+                                            <!-- Rendering express checkout default content -->
+                                            <!-- End of rendering express checkout default content -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="page-item-5c40310a213a5f2b185aa130"
+                                     class="item grid-google_map-item
+              col-xs-12
+              col-md-4
+              col-md-height
+              "
+                                     style="vertical-align: top; height: 100%;">
+                                    <div style="height: 100%;">
+                                        <div class="box-info " style="">
+                                            <!-- Redner grid item partial -->
+                                            <div class="page-item-google-map-iframe">
+                                                <iframe frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD2_G6TRyRHIyB_b3rLbjJKCmca3kCoFaM&q=place_id:ChIJyfE3vJ49aTQRmrdhznuqtv4&zoom=16&language=zh-hant"></iframe>
+                                            </div>
+
+                                            <!-- Redner grid item title -->
+                                            <!-- Redner grid item content -->
+                                            <!-- End of cache  -->
+                                            <!-- Rendering express checkout default content -->
+                                            <!-- End of rendering express checkout default content -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of rendering page grid items -->
+                            </div> <!-- End of row -->
+                        </div> <!-- End of container-md-height -->
+                    </div> <!-- End of container -->
+
+
+
+
+
+
+
+
+
+
+                }
+
+
+
+            </div>
+
+        </div><!--yield-wrapper-->
+        <!-- main Content end-->
+    </div><!-- body-content-->
+
 
 
 </div>
+

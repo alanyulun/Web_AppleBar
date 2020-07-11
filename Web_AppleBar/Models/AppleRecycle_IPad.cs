@@ -12,13 +12,9 @@ namespace Web_AppleBar.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class AppleRecycle_IPad
+    public partial class AppleRecycle_Ipad
     {
         public string ID { get; set; }
-        public string Herf { get; set; }
-        public string Title { get; set; }
-        public string Contents { get; set; }
-        public string ImgType { get; set; }
         public string Img { get; set; }
     }
 }
