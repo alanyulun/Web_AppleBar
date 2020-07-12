@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Web_AppleBar.Models.News>
+﻿@model IEnumerable<Web_AppleBar.Models.StoreInformation>
 
 
 
@@ -30,7 +30,6 @@
         <div class="yield-wrapper">
 
 
-
             <div class="custom-page" ga-page-view>
 
 
@@ -54,7 +53,7 @@
                                         <!-- Redner grid item content -->
                                         <div class="description" ng-non-bindable>
                                             <p style="text-align: center;">
-                                                <span style="font-size:48px;"><strong>最新消息</strong></span>
+                                                <span style="font-size:48px;"><strong>門市資訊</strong></span>
                                             </p>
                                         </div>
                                         <!-- End of cache  -->
@@ -69,9 +68,7 @@
                 </div> <!-- End of container -->
 
 
-
-
-                @foreach (var item in Model)
+                @foreach (var item in Model.Select(m => m.Area).Distinct())
                 {
                     <div class="container global-primary  ">
                         <div class="container-md-height" style="height: 100%; table-layout: fixed; width: 100%; margin-bottom: 2%; ">
@@ -111,6 +108,19 @@
                             </div> <!-- End of row -->
                         </div> <!-- End of container-md-height -->
                     </div> <!-- End of container -->
+
+
+
+
+                    <div class="title" ng-non-bindable>
+                        <p>
+                            <strong><span style="font-size:36px;">@item</span></strong>
+                        </p>
+                    </div>
+
+                    foreach (var data in Model.Where(m => m.Area == item))
+                    {
+
                     <div class="container global-primary  ">
                         <div class="container-md-height" style="height: 100%; table-layout: fixed; width: 100%; margin-bottom: 2%; ">
                             <!-- height and width must be difined for td to size correctly -->
@@ -127,18 +137,27 @@
                                         <div class="box-info " style="">
                                             <!-- Redner grid item partial -->
                                             <!-- Redner grid item title -->
-                                            <div class="title" ng-non-bindable>
-                                                <p>
-                                                    <strong><span style="font-size:36px;">@item.Title</span></strong>
-                                                </p>
-                                            </div>
                                             <!-- Redner grid item content -->
+
+
+
+
+
+
                                             <div class="description" ng-non-bindable>
                                                 <div style="color: rgb(90, 90, 90); background-color: rgb(255, 255, 255);">
-                                                    <span style="font-weight: 700;">@item.Contents</span>
+                                                    <span style="font-weight: 700;">@data.branchStore</span>
                                                 </div>
 
+                                                <div style="color: rgb(90, 90, 90); background-color: rgb(255, 255, 255);">
+                                                    <span style="line-height: 1.42857;">營業時間：@data.BusinessHours</span>
+                                                </div>
 
+                                                <div style="color: rgb(90, 90, 90); background-color: rgb(255, 255, 255);">門市地址：@data.Address</div>
+
+                                                <div style="color: rgb(90, 90, 90); background-color: rgb(255, 255, 255);">聯絡電話：@data.Tel</div>
+
+                                                <div style="color: rgb(90, 90, 90); background-color: rgb(255, 255, 255);">@data.Services</div>
                                             </div>
                                             <!-- End of cache  -->
                                             <!-- Rendering express checkout default content -->
@@ -147,12 +166,7 @@
                                     </div>
                                 </div>
                                 <div id="page-item-599d50f8d4e39533520011b0"
-                                     class="item grid-image-item
-              col-xs-12
-              col-md-4
-              col-md-height
-              "
-                                     style="vertical-align: top; height: 100%;">
+                                     class="item grid-image-item col-xs-12 col-md-4 col-md-height" style="vertical-align: top; height: 100%;">
                                     <div style="height: 100%;">
                                         <div class="box-info " style="">
                                             <!-- Redner grid item partial -->
@@ -161,7 +175,7 @@
     margin-bottomless
     ">
                                                 <img class="sl-lazy-image"
-                                                     src="@Url.Content("~/Resource/Img/" + item.Img)"
+                                                     src="@Url.Content("~/Resource/Img/" + data.Img)"
                                                      alt="">
 
 
@@ -176,12 +190,8 @@
                                     </div>
                                 </div>
                                 <div id="page-item-5c40310a213a5f2b185aa130"
-                                     class="item grid-google_map-item
-              col-xs-12
-              col-md-4
-              col-md-height
-              "
-                                     style="vertical-align: top; height: 100%;">
+                                     class="item grid-image-item col-xs-12 col-md-4 col-md-height" style="vertical-align: top; height: 100%;">
+
                                     <div style="height: 100%;">
                                         <div class="box-info " style="">
                                             <!-- Redner grid item partial -->
@@ -196,21 +206,15 @@
                                             <!-- End of rendering express checkout default content -->
                                         </div>
                                     </div>
-
-
-
-
                                 </div>
                                 <!-- End of rendering page grid items -->
                             </div> <!-- End of row -->
                         </div> <!-- End of container-md-height -->
-                    </div>
-                    
-                    <!-- End of container -->
-                }
+                    </div> <!-- End of container -->
+                        }
+                    }
 
             </div>
-
 
         </div><!--yield-wrapper-->
         <!-- main Content end-->

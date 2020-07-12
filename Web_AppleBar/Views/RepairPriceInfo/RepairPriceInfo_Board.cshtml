@@ -1,0 +1,55 @@
+﻿@model  Web_AppleBar.Models.ViewModel.RepairPriceInfo_Board
+@section css
+{
+    <style>
+        table tbody tr td {
+            font-size: 20px;
+        }
+
+        table thead tr th {
+            font-size: 24px;
+        }
+
+
+        table tbody tr th {
+            font-size: 24px;
+        }
+    </style>
+}
+
+<br />
+<br />
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Mac價目表</th>
+            @foreach (var row in Model.repairPriceTable_Row_Boards)
+            {
+                <th scope="col">@row.Name</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var col in Model.repairPriceTable_Col_Boards)
+        {
+            <tr>
+
+                <th scope="row">@col.Name</th>
+
+
+
+
+                @foreach (var price in Model.repairPriceTable_Data_Boards.Where(M => M.ColID == col.ID))
+                {
+                    <td>@price.Data</td>
+
+                }
+
+
+
+
+            </tr>
+        }
+
+    </tbody>
+</table>

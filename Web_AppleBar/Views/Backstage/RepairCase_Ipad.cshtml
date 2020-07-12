@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Web_AppleBar.Models.RepairCase_Ipad>
+@{
+    Layout = "~/Views/Shared/_BackLayout.cshtml";
+}
+
+<div class="container my-3">
+    <div class="row align-content-center">
+        <div class="col-12">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr class="d-flex">
+                        <th scope="col" class="col-1">#</th>
+                        <th scope="col" class="col-2">Model</th>
+                        <th scope="col" class="col-2">Malfunction</th>
+                        <th scope="col" class="col-4">Contents</th>
+                        <th scope="col" class="col-2">Image</th>
+                        <th scope="col" class="col-1">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="d-flex">
+                            <th scope="row" class="col-1">@item.ID</th>
+                            <td class="col-2"><input type="text" value="@item.Model" class="w-100" /></td>
+                            <td class="col-2"><input type="text" value="@item.Malfunction" class="w-100" /></td>
+                            <td class="col-4"><textarea class="w-100 h-100">@item.Contents</textarea></td>
+                            <td class="col-2">
+                                <img src="@Url.Content("~/Resource/Img/" + @item.Img+".jpg")" />
+                                <br />
+                                <input type="file" />
+                            </td>
+                            <td class="col-1">
+                                <input class="btn btn-primary my-1" type="button" value="更新" />
+                                <br />
+                                <input class="btn btn-danger my-1" type="button" value="刪除" />
+                            </td>
+                        </tr>
+                    }
+
+                    <tr class="table-secondary d-flex">
+                        <th scope="row" class="col-1">#</th>
+                        <td class="col-2"><input type="text" placeholder="Model" class="w-100" /></td>
+                        <td class="col-2"><input type="text" placeholder="Malfunction" class="w-100" /></td>
+                        <td class="col-4"><textarea class="w-100 h-100" placeholder="Content"></textarea></td>
+                        <td class="col-2">
+                            <input type="file" />
+                        </td>
+                        <td class="col-1">
+                            <input class="btn btn-primary my-1" type="button" value="新增" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

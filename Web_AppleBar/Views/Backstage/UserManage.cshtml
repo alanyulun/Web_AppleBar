@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Web_AppleBar.Models.BackstageUser>
+@{
+    Layout = "~/Views/Shared/_BackLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr class="d-flex">
+                        <th scope="col" class="col-1">帳號</th>
+                        <th scope="col" class="col-2">密碼</th>
+                        <th scope="col" class="col-2">姓名</th>
+                        <th scope="col" class="col-2">電話</th>
+                        <th scope="col" class="col-4">備註</th>
+                        <th scope="col" class="col-1">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr class="d-flex">
+                        <th scope="row" class="col-1">@item.Account</th>
+                        <th class="col-2"><input type="password" value="@item.Password" class="w-100" /></th>
+                        <td class="col-2"><input type="text" value="@item.Name" class="w-100" /></td>
+                        <td class="col-2"><input type="tel" value="@item.PhoneNum" class="w-100" /></td>
+                        <td class="col-4"><textarea class="w-100 h-100" style="min-height:100px">@item.Remarks</textarea></td>
+                        <td class="col-1">
+                            @Html.ActionLink("編輯", "UserManage_Edit",
+                           new {
+                               account=item.Account,
+                               password=item.Password,
+                               name=item.Name,
+                               phoneNum=item.PhoneNum,
+                               remarks=item.Remarks
+                           },
+                           htmlAttributes: new { @class= "btn btn-primary my-1" })
+                            <!--<input class="btn btn-primary my-1" type="button" value="更新" />-->
+                            <br />
+                            <input class="btn btn-danger my-1" type="button" value="刪除" />
+                        </td>
+                    </tr>
+                    }
+
+                <tr class="table-secondary d-flex">
+                    <th scope="row" class="col-1">#</th>
+                    <th class="col-2"><input type="password" placeholder="密碼" class="w-100" /></th>
+                    <td class="col-2"><input type="text" placeholder="姓名" class="w-100" /></td>
+                    <td class="col-2"><input type="tel" placeholder="電話" class="w-100" /></td>
+                    <td class="col-4"><textarea class="w-100 h-100" style="min-height:100px" placeholder="備註"></textarea></td>
+                    <td class="col-1">
+                        <input class="btn btn-primary my-1" type="button" value="新增" />
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

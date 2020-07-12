@@ -19,16 +19,24 @@ namespace Web_AppleBar.Controllers
 
         public ActionResult BatteryRepair()
         {
-            var Data = db.IphoneRepair_Battery.ToList();
+            var iphoneRepair_Batteries = db.IphoneRepair_Battery.ToList();
 
-            return View(Data);
+            return View(iphoneRepair_Batteries);
         }
 
         public ActionResult SoakingRepair()
         {
-            var Data = db.IphoneRepair_Soaking.ToList();
+            var iphoneRepair_Soakings = db.IphoneRepair_Soaking.ToList();
 
-            return View(Data);
+            return View(iphoneRepair_Soakings);
+        }
+
+
+        public ActionResult BoardRepair()
+        {
+            var iphoneRepair_Boards = db.IphoneRepair_Board.ToList();
+
+            return View(iphoneRepair_Boards);
         }
     }
 }

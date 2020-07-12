@@ -19,10 +19,9 @@ namespace Web_AppleBar.Controllers
 
         public ActionResult News()
         {
-            //var News = db.News.ToList();
-
-            //return View(News);
-            return View();
+            var news = db.News.ToList();
+            
+            return View(news);
         }
     }
 }

@@ -50,5 +50,9 @@ namespace Web_AppleBar.Models
         public virtual DbSet<RepairPriceTable_Row_Ipad> RepairPriceTable_Row_Ipad { get; set; }
         public virtual DbSet<RepairPriceTable_Row_Iphone> RepairPriceTable_Row_Iphone { get; set; }
         public virtual DbSet<RepairPriceTable_Row_Mac> RepairPriceTable_Row_Mac { get; set; }
+        public virtual DbSet<MacUpgrade> MacUpgrade { get; set; }
+        public virtual DbSet<News> News { get; set; }
+        public virtual DbSet<StoreInformation> StoreInformation { get; set; }
+        public virtual DbSet<BackstageUser> BackstageUser { get; set; }
     }
 }

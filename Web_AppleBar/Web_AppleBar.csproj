@@ -123,6 +123,7 @@
     <Content Include="CSS\main_style.css" />
     <Content Include="CSS\sites.css" />
     <Content Include="CSS\social-icons.css" />
+    <Content Include="CSS\style.css" />
     <Content Include="CSS\swanky-705861ce76e37fc06ab7cf5f893ea280304a4bf0a8e13943e4afeb472f28d30e.css" />
     <Content Include="CSS\swanky.centered-65e1e74b773431debdd3907a43faf352cacb195537330d9c6e86fb62b1448dfe.css" />
     <Content Include="CSS\swanky.tint-6c103231e30ebcaf4acaa835743137a37d6d8491615b852beed7f834c6b8abe5.css" />
@@ -996,15 +997,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\BackgroundController.cs" />
+    <Compile Include="Controllers\AppleRecycleController.cs" />
+    <Compile Include="Controllers\BackstageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IPhoneRepairController.cs" />
     <Compile Include="Controllers\MacBookRepairController.cs" />
-    <Compile Include="Controllers\MacUpgrafeController.cs" />
+    <Compile Include="Controllers\MacUpgradeController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\RepairCaseController.cs" />
     <Compile Include="Controllers\RepairController.cs" />
     <Compile Include="Controllers\RepairPriceInfoController.cs" />
+    <Compile Include="Controllers\StoreInfoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1032,6 +1035,9 @@
     <Compile Include="Models\AppleRecycle_Mac.cs">
       <DependentUpon>AppleBar_db_200706Entities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\BackstageUser.cs">
+      <DependentUpon>AppleBar_db_200706Entities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\IphoneRepair_Battery.cs">
       <DependentUpon>AppleBar_db_200706Entities.tt</DependentUpon>
     </Compile>
@@ -1042,6 +1048,12 @@
       <DependentUpon>AppleBar_db_200706Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\MacbookRepair_Soaking.cs">
+      <DependentUpon>AppleBar_db_200706Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MacUpgrade.cs">
+      <DependentUpon>AppleBar_db_200706Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\News.cs">
       <DependentUpon>AppleBar_db_200706Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RepairCase_Ipad.cs">
@@ -1098,7 +1110,17 @@
     <Compile Include="Models\RepairPriceTable_Row_Mac.cs">
       <DependentUpon>AppleBar_db_200706Entities.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\StoreInformation.cs">
+      <DependentUpon>AppleBar_db_200706Entities.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ViewModel\MacUpgradeVM.cs" />
+    <Compile Include="Models\ViewModel\RepairPriceBoardVM.cs" />
+    <Compile Include="Models\ViewModel\RepairPriceHomeDeliveryVM.cs" />
+    <Compile Include="Models\ViewModel\RepairPriceInfo_Board.cs" />
+    <Compile Include="Models\ViewModel\RepairPriceIpadVM.cs" />
+    <Compile Include="Models\ViewModel\RepairPriceIphoneVM.cs" />
+    <Compile Include="Models\ViewModel\RepairPriceMacVM.cs" />
+    <Compile Include="Models\ViewModel\StoreInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1118,11 +1140,6 @@
     <Content Include="Views\RepairCase\RepairCase_IPhone.cshtml" />
     <Content Include="Views\RepairCase\RepairCase_MacBook.cshtml" />
     <Content Include="Views\RepairPriceInfo\Index.cshtml" />
-    <Content Include="Views\RepairPriceInfo\RepairePriceInfo_Board.cshtml" />
-    <Content Include="Views\RepairPriceInfo\RepairePriceInfo_HomeDelivery.cshtml" />
-    <Content Include="Views\RepairPriceInfo\RepairePriceInfo_IPad.cshtml" />
-    <Content Include="Views\RepairPriceInfo\RepairePriceInfo_IPhone.cshtml" />
-    <Content Include="Views\RepairPriceInfo\RepairePriceInfo_Mac.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />
@@ -1149,9 +1166,37 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Background\IphoneRepaire_Battery.cshtml" />
-    <Content Include="Views\Background\IphoneRepaire_Soaking.cshtml" />
-    <Content Include="Views\Background\IphoneRepaire_Board.cshtml" />
+    <Content Include="Views\Backstage\IphoneRepair_Battery.cshtml" />
+    <Content Include="Views\Backstage\IphoneRepair_Soaking.cshtml" />
+    <Content Include="Views\Backstage\IphoneRepair_Board.cshtml" />
+    <Content Include="Views\Shared\_BackLayout.cshtml" />
+    <Content Include="Views\Backstage\MacbookRepair_Soaking.cshtml" />
+    <Content Include="Views\Backstage\AppleRecycle_Iphone.cshtml" />
+    <Content Include="Views\Backstage\AppleRecycle_Ipad.cshtml" />
+    <Content Include="Views\Backstage\AppleRecycle_Mac.cshtml" />
+    <Content Include="Views\Backstage\MacUpgrade.cshtml" />
+    <Content Include="Views\Backstage\RepairCase_Iphone.cshtml" />
+    <Content Include="Views\Backstage\RepairCase_Ipad.cshtml" />
+    <Content Include="Views\Backstage\RepairCase_Macbook.cshtml" />
+    <Content Include="Views\Backstage\News.cshtml" />
+    <Content Include="Views\Backstage\StoreInformation.cshtml" />
+    <Content Include="Views\Backstage\RrpairPriceTable_Iphone.cshtml" />
+    <Content Include="Views\Backstage\RrpairPriceTable_Ipad.cshtml" />
+    <Content Include="Views\Backstage\RrpairPriceTable_Mac.cshtml" />
+    <Content Include="Views\Backstage\RrpairPriceTable_Board.cshtml" />
+    <Content Include="Views\Backstage\RrpairPriceTable_HomeDelivery.cshtml" />
+    <Content Include="Views\Backstage\Login.cshtml" />
+    <Content Include="Views\Backstage\UserManage.cshtml" />
+    <Content Include="Views\AppleRecycle\AppleRecycle_Ipad.cshtml" />
+    <Content Include="Views\AppleRecycle\AppleRecycle_Iphone.cshtml" />
+    <Content Include="Views\AppleRecycle\AppleRecycle_Mac.cshtml" />
+    <Content Include="Views\StoreInfo\StoreInfo.cshtml" />
+    <Content Include="Views\IPhoneRepair\BoardRepair.cshtml" />
+    <Content Include="Views\RepairPriceInfo\RepairPriceInfo_Board.cshtml" />
+    <Content Include="Views\RepairPriceInfo\RepairPriceInfo_HomeDelivery.cshtml" />
+    <Content Include="Views\RepairPriceInfo\RepairPriceInfo_IPad.cshtml" />
+    <Content Include="Views\RepairPriceInfo\RepairPriceInfo_IPhone.cshtml" />
+    <Content Include="Views\RepairPriceInfo\RepairPriceInfo_Mac.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1160,7 +1205,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Resource\Img\" />
   </ItemGroup>
   <ItemGroup>

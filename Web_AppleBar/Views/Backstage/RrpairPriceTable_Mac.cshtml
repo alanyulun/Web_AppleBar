@@ -1,0 +1,117 @@
+﻿@model Web_AppleBar.Models.ViewModel.RepairPriceMacVM
+@{
+    Layout = "~/Views/Shared/_BackLayout.cshtml";
+}
+
+<div class="container">
+    <div class="row my-3">
+        <div class="col-12">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr class="d-flex">
+                        <th scope="col" class="col-1">#</th>
+                        <th scope="col" class="col-10">Model</th>
+                        <th scope="col" class="col-1">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.RepairPriceTable_Row)
+                    {
+                        <tr class="d-flex">
+                            <th scope="row" class="col-1">@item.ID</th>
+                            <td class="col-10"><input type="text" value="@item.Name" class="w-100" /></td>
+                            <td class="col-1">
+                                <input class="btn btn-primary my-1" type="button" value="更新" />
+                                <br />
+                                <input class="btn btn-danger my-1" type="button" value="刪除" />
+                            </td>
+                        </tr>
+                    }
+
+                    <tr class="table-secondary d-flex">
+                        <th scope="row" class="col-1">#</th>
+                        <td class="col-10"><input type="text" placeholder="Title" class="w-100" /></td>
+                        <td class="col-1">
+                            <input class="btn btn-primary my-1" type="button" value="新增" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-12">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr class="d-flex">
+                        <th scope="col" class="col-1">#</th>
+                        <th scope="col" class="col-10">Model</th>
+                        <th scope="col" class="col-1">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.RepairPriceTable_Col)
+                    {
+                        <tr class="d-flex">
+                            <th scope="row" class="col-1">@item.ID</th>
+                            <td class="col-10"><input type="text" value="@item.Name" class="w-100" /></td>
+                            <td class="col-1">
+                                <input class="btn btn-primary my-1" type="button" value="更新" />
+                                <br />
+                                <input class="btn btn-danger my-1" type="button" value="刪除" />
+                            </td>
+                        </tr>
+                    }
+
+                    <tr class="table-secondary d-flex">
+                        <th scope="row" class="col-1">#</th>
+                        <td class="col-10"><input type="text" placeholder="Title" class="w-100" /></td>
+                        <td class="col-1">
+                            <input class="btn btn-primary my-1" type="button" value="新增" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-12">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr class="d-flex">
+                        <th scope="col" class="col-2">RowID</th>
+                        <th scope="col" class="col-2">ColID</th>
+                        <th scope="col" class="col-7">Data</th>
+                        <th scope="col" class="col-1">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.RepairPriceTable_Data)
+                    {
+                        <tr class="d-flex">
+                            <th class="col-2">@item.RowID</th>
+                            <th class="col-2">@item.ColID</th>
+                            <td class="col-7"><input type="text" value="@item.Data" class="w-100" /></td>
+                            <td class="col-1">
+                                <input class="btn btn-primary my-1" type="button" value="更新" />
+                                <br />
+                                <input class="btn btn-danger my-1" type="button" value="刪除" />
+                            </td>
+                        </tr>
+                    }
+
+                    <tr class="table-secondary d-flex">
+                        <th class="col-2"><input type="text" placeholder="RowID" class="w-100" /></th>
+                        <th class="col-2"><input type="text" placeholder="ColID" class="w-100" /></th>
+                        <td class="col-7"><input type="text" placeholder="Title" class="w-100" /></td>
+                        <td class="col-1">
+                            <input class="btn btn-primary my-1" type="button" value="新增" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

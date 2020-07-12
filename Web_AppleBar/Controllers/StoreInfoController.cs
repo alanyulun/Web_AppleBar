@@ -7,20 +7,18 @@ using Web_AppleBar.Models;
 
 namespace Web_AppleBar.Controllers
 {
-    public class RepairController : Controller
+    public class StoreInfoController : Controller
     {
+
         private AppleBar_db_200706Entities db = new AppleBar_db_200706Entities();
 
-        // GET: Repair
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult RepairPriceInfo_Mac()
+        // GET: StoreInfo
+        public ActionResult StoreInfo()
         {
 
-            return View();
+  
+
+            return View(db.StoreInformation.ToList());
         }
     }
 }

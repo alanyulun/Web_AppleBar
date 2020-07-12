@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Web_AppleBar.Models.StoreInformation>
+@{
+    Layout = "~/Views/Shared/_BackLayout.cshtml";
+}
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr class="d-flex">
+                        <th scope="col" class="col-1">#</th>
+                        <th scope="col" class="col-1">Area</th>
+                        <th scope="col" class="col-1">Business Time</th>
+                        <th scope="col" class="col-1">Address</th>
+                        <th scope="col" class="col-1">Tel</th>
+                        <th scope="col" class="col-3">Services</th>
+                        <th scope="col" class="col-1">branch Store</th>
+                        <th scope="col" class="col-2">Image</th>
+                        <th scope="col" class="col-1">Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr class="d-flex">
+                        <th scope="row" class="col-1">@item.ID</th>
+                        <td class="col-1"><input type="text" value="@item.Area" class="w-100" /></td>
+                        <td class="col-1"><input type="text" value="@item.BusinessHours" class="w-100" /></td>
+                        <td class="col-1"><input type="text" value="@item.Address" class="w-100" /></td>
+                        <td class="col-1"><input type="tel" value="@item.Tel" class="w-100" /></td>
+                        <td class="col-3"><textarea class="w-100 h-100">@item.Services</textarea></td>
+                        <td class="col-1"><input type="text" value="@item.branchStore" class="w-100" /></td>
+                        <td class="col-2">
+                            <img src="@Url.Content("~/Resource/Img/" + @item.Img+".jpg")" />
+                            <br />
+                            <input type="file" value="上傳" />
+                        </td>
+                        <td class="col-1">
+                            <input class="btn btn-primary my-1" type="button" value="更新" />
+                            <br />
+                            <input class="btn btn-danger my-1" type="button" value="刪除" />
+                        </td>
+                    </tr>
+                    }
+
+                <tr class="table-secondary d-flex">
+                    <th scope="row" class="col-1">#</th>
+                    <td class="col-1"><input type="text" placeholder="Area" class="w-100" /></td>
+                    <td class="col-1"><input type="text" placeholder="Business Hours" class="w-100" /></td>
+                    <td class="col-1"><input type="text" placeholder="Address" class="w-100" /></td>
+                    <td class="col-1"><input type="tel" placeholder="Tel" class="w-100" /></td>
+                    <td class="col-3"><textarea class="w-100 h-100" placeholder="Services"></textarea></td>
+                    <td class="col-1"><input type="text" placeholder="branch Store" class="w-100" /></td>
+                    <td class="col-2">
+                        <input type="file" value="上傳" />
+                    </td>
+                    <td class="col-1">
+                        <input class="btn btn-primary my-1" type="button" value="新增" />
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

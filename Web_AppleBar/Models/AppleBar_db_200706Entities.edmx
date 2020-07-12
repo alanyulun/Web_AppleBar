@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AppleBar_db_200706Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AppleBar_db_200706Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AppleRecycle_Ipad">
           <Key>
             <PropertyRef Name="ID" />
@@ -25,6 +25,16 @@
           </Key>
           <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Img" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BackstageUser">
+          <Key>
+            <PropertyRef Name="Account" />
+          </Key>
+          <Property Name="Account" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PhoneNum" Type="varchar" MaxLength="50" />
+          <Property Name="Remarks" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="IphoneRepair_Battery">
           <Key>
@@ -54,6 +64,25 @@
           <Property Name="Img" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="MacbookRepair_Soaking">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contents" Type="nvarchar(max)" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MacUpgrade">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="Model" Type="varchar" MaxLength="50" />
+          <Property Name="Contents" Type="nvarchar(max)" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="News">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -207,6 +236,19 @@
           <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="StoreInformation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Area" Type="nvarchar" MaxLength="50" />
+          <Property Name="BusinessHours" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tel" Type="nvarchar" MaxLength="20" />
+          <Property Name="Services" Type="nvarchar" MaxLength="50" />
+          <Property Name="branchStore" Type="nvarchar" MaxLength="30" />
+          <Property Name="Img" Type="varchar" MaxLength="50" />
+        </EntityType>
         <Association Name="FK_RepairPriceTable_Data_Board_RepairPriceTable_Col_Board">
           <End Role="RepairPriceTable_Col_Board" Type="Self.RepairPriceTable_Col_Board" Multiplicity="1" />
           <End Role="RepairPriceTable_Data_Board" Type="Self.RepairPriceTable_Data_Board" Multiplicity="*" />
@@ -331,10 +373,13 @@
           <EntitySet Name="AppleRecycle_Ipad" EntityType="Self.AppleRecycle_Ipad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AppleRecycle_Iphone" EntityType="Self.AppleRecycle_Iphone" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AppleRecycle_Mac" EntityType="Self.AppleRecycle_Mac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BackstageUser" EntityType="Self.BackstageUser" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IphoneRepair_Battery" EntityType="Self.IphoneRepair_Battery" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IphoneRepair_Board" EntityType="Self.IphoneRepair_Board" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IphoneRepair_Soaking" EntityType="Self.IphoneRepair_Soaking" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MacbookRepair_Soaking" EntityType="Self.MacbookRepair_Soaking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MacUpgrade" EntityType="Self.MacUpgrade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RepairCase_Ipad" EntityType="Self.RepairCase_Ipad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RepairCase_Iphone" EntityType="Self.RepairCase_Iphone" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RepairCase_Macbook" EntityType="Self.RepairCase_Macbook" Schema="dbo" store:Type="Tables" />
@@ -353,6 +398,7 @@
           <EntitySet Name="RepairPriceTable_Row_Ipad" EntityType="Self.RepairPriceTable_Row_Ipad" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RepairPriceTable_Row_Iphone" EntityType="Self.RepairPriceTable_Row_Iphone" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RepairPriceTable_Row_Mac" EntityType="Self.RepairPriceTable_Row_Mac" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StoreInformation" EntityType="Self.StoreInformation" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_RepairPriceTable_Data_Board_RepairPriceTable_Col_Board" Association="Self.FK_RepairPriceTable_Data_Board_RepairPriceTable_Col_Board">
             <End Role="RepairPriceTable_Col_Board" EntitySet="RepairPriceTable_Col_Board" />
             <End Role="RepairPriceTable_Data_Board" EntitySet="RepairPriceTable_Data_Board" />
@@ -394,8 +440,7 @@
             <End Role="RepairPriceTable_Data_Mac" EntitySet="RepairPriceTable_Data_Mac" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AppleBar_db_200706Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -807,7 +852,53 @@
             <End Role="RepairPriceTable_Row_Mac" EntitySet="RepairPriceTable_Row_Mac" />
             <End Role="RepairPriceTable_Data_Mac" EntitySet="RepairPriceTable_Data_Mac" />
           </AssociationSet>
+          <EntitySet Name="MacUpgrade" EntityType="AppleBar_db_200706Model.MacUpgrade" />
+          <EntitySet Name="News" EntityType="AppleBar_db_200706Model.News" />
+          <EntitySet Name="StoreInformation" EntityType="AppleBar_db_200706Model.StoreInformation" />
+          <EntitySet Name="BackstageUser" EntityType="AppleBar_db_200706Model.BackstageUser" />
         </EntityContainer>
+        <EntityType Name="MacUpgrade">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="News">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Contents" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="StoreInformation">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BusinessHours" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Services" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="branchStore" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Img" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BackstageUser">
+          <Key>
+            <PropertyRef Name="Account" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNum" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Remarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1032,6 +1123,52 @@
             <EntityTypeMapping TypeName="AppleBar_db_200706Model.RepairPriceTable_Row_Mac">
               <MappingFragment StoreEntitySet="RepairPriceTable_Row_Mac">
                 <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MacUpgrade">
+            <EntityTypeMapping TypeName="AppleBar_db_200706Model.MacUpgrade">
+              <MappingFragment StoreEntitySet="MacUpgrade">
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Img" ColumnName="Img" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="News">
+            <EntityTypeMapping TypeName="AppleBar_db_200706Model.News">
+              <MappingFragment StoreEntitySet="News">
+                <ScalarProperty Name="Img" ColumnName="Img" />
+                <ScalarProperty Name="Contents" ColumnName="Contents" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreInformation">
+            <EntityTypeMapping TypeName="AppleBar_db_200706Model.StoreInformation">
+              <MappingFragment StoreEntitySet="StoreInformation">
+                <ScalarProperty Name="Img" ColumnName="Img" />
+                <ScalarProperty Name="branchStore" ColumnName="branchStore" />
+                <ScalarProperty Name="Services" ColumnName="Services" />
+                <ScalarProperty Name="Tel" ColumnName="Tel" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="BusinessHours" ColumnName="BusinessHours" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BackstageUser">
+            <EntityTypeMapping TypeName="AppleBar_db_200706Model.BackstageUser">
+              <MappingFragment StoreEntitySet="BackstageUser">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
             </EntityTypeMapping>

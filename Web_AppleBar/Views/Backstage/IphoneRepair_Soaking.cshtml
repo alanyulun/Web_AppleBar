@@ -1,4 +1,7 @@
-﻿@model IEnumerable<Web_AppleBar.Models.IphoneRepair_Battery>
+﻿@model IEnumerable<Web_AppleBar.Models.IphoneRepair_Soaking>
+@{
+    Layout = "~/Views/Shared/_BackLayout.cshtml";
+}
 
 <div class="container">
     <div class="row">
@@ -8,8 +11,8 @@
                     <tr class="d-flex">
                         <th scope="col" class="col-1">#</th>
                         <th scope="col" class="col-3">Title</th>
-                        <th scope="col" class="col-5">Contents</th>
-                        <th scope="col" class="col-2">Image</th>
+                        <th scope="col" class="col-4">Contents</th>
+                        <th scope="col" class="col-3">Image</th>
                         <th scope="col" class="col-1">Edit</th>
                     </tr>
                 </thead>
@@ -19,8 +22,8 @@
                         <tr class="d-flex">
                             <th scope="row" class="col-1">@item.ID</th>
                             <td class="col-3"><input type="text" value="@item.Title" class="w-100" /></td>
-                            <td class="col-5"><textarea class="w-100 h-100">@item.Contents</textarea></td>
-                            <td class="col-2">
+                            <td class="col-4"><textarea class="w-100 h-100">@item.Contents</textarea></td>
+                            <td class="col-3">
                                 <img src="@Url.Content("~/Resource/Img/" + @item.Img+".jpg")" />
                                 <br />
                                 <input type="file" value="上傳" />
@@ -32,6 +35,18 @@
                             </td>
                         </tr>
                     }
+
+                    <tr class="table-secondary d-flex">
+                        <th scope="row" class="col-1">#</th>
+                        <td class="col-3"><input type="text" placeholder="Title" class="w-100" /></td>
+                        <td class="col-4"><textarea class="w-100 h-100" placeholder="Content"></textarea></td>
+                        <td class="col-3">
+                            <input type="file" />
+                        </td>
+                        <td class="col-1">
+                            <input class="btn btn-primary my-1" type="button" value="新增" />
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>

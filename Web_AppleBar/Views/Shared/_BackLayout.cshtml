@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Collapsible sidebar using Bootstrap 4</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="~/CSS/style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    @RenderSection("css", false)
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Backstage</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="/Backstage/News">最新消息</a>
+                </li>
+
+                <li>
+                    <a href="#IphoneRepairSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Iphone維修</a>
+                    <ul class="collapse list-unstyled" id="IphoneRepairSubmenu">
+                        <li>
+                            <a href="/Backstage/IphoneRepair_Battery">Iphone電池維修</a>
+                        </li>
+                        <li>
+                            <a href="/Backstage/IphoneRepair_Soaking">Iphone進水維修</a>
+                        </li>
+                        <li>
+                            <a href="/Backstage/IphoneRepair_Board">精密主板維修</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#MacbookRepairSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Macbook維修</a>
+                    <ul class="collapse list-unstyled" id="MacbookRepairSubmenu">
+                        <li>
+                            <a href="/Backstage/MacbookRepair_Soaking">Macbook進水維修</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#AppleRecycleSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Apple回收</a>
+                    <ul class="collapse list-unstyled" id="AppleRecycleSubmenu">
+                        <li>
+                            <a href="/Backstage/AppleRecycle_Iphone">Iphone回收</a>
+                        </li>
+                        <li>
+                            <a href="/Backstage/AppleRecycle_Ipad">Ipad回收</a>
+                        </li>
+                        <li>
+                            <a href="/Backstage/AppleRecycle_Mac">Mac回收</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="/Backstage/MacUpgrade">Mac升級</a>
+                </li>
+
+                <li>
+                    <a href="#RepairCaseSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">維修案例</a>
+                    <ul class="collapse list-unstyled" id="RepairCaseSubmenu">
+                        <li>
+                            <a href="/Backstage/RepairCase_Iphone">Iphone維修案例</a>
+                        </li>
+                        <li>
+                            <a href="/Backstage/RepairCase_Ipad">Ipad維修案例</a>
+                        </li>
+                        <li>
+                            <a href="/Backstage/RepairCase_Macbook">Macbook維修案例</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#RepairPriceSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">維修價目表</a>
+                    <ul class="collapse list-unstyled" id="RepairPriceSubmenu">
+                        <li>
+                            <a href="/Backstage/RrpairPriceTable_Iphone">Iphone維修</a>
+                        </li>
+                        <li>
+                            <a href="/Backstage/RrpairPriceTable_Ipad">Ipad維修</a>
+                        </li>
+                        <li>
+                            <a href="/Backstage/RrpairPriceTable_Mac">Mac維修</a>
+                        </li>
+                        <li>
+                            <a href="/Backstage/RrpairPriceTable_Board">主機板維修</a>
+                        </li>
+                        <li>
+                            <a href="/Backstage/RrpairPriceTable_HomeDelivery">宅配維修</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="/Backstage/UserManage">後台使用者管理</a>
+                </li>
+
+                <li>
+                    <a href="/Home/HomePage">登出</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            @RenderBody()
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+    @RenderSection("scripts", required: false)
+
+</body>
+
+</html>

@@ -40,6 +40,10 @@
         <AssociationConnector Association="AppleBar_db_200706Model.FK_RepairPriceTable_Data_Ipad_RepairPriceTable_Row_Ipad" ManuallyRouted="false" />
         <AssociationConnector Association="AppleBar_db_200706Model.FK_RepairPriceTable_Data_Iphone_RepairPriceTable_Row_Iphone" ManuallyRouted="false" />
         <AssociationConnector Association="AppleBar_db_200706Model.FK_RepairPriceTable_Data_Mac_RepairPriceTable_Row_Mac" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AppleBar_db_200706Model.MacUpgrade" Width="1.5" PointX="12.375" PointY="6.75" />
+        <EntityTypeShape EntityType="AppleBar_db_200706Model.News" Width="1.5" PointX="10.375" PointY="12.75" />
+        <EntityTypeShape EntityType="AppleBar_db_200706Model.StoreInformation" Width="1.5" PointX="12.375" PointY="12.75" />
+        <EntityTypeShape EntityType="AppleBar_db_200706Model.BackstageUser" Width="1.5" PointX="14.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
