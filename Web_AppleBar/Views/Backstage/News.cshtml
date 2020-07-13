@@ -29,7 +29,12 @@
                                 <input type="file" value="上傳" />
                             </td>
                             <td class="col-1">
-                                <input class="btn btn-primary my-1" type="button" value="更新" />
+                                @Html.ActionLink("編輯", "UserManage_Edit",
+                                new
+                                {
+                                    account = item.ID,
+                                },
+                                htmlAttributes: new { @class = "btn btn-primary my-1" })
                                 <br />
                                 <input class="btn btn-danger my-1" type="button" value="刪除" />
                             </td>

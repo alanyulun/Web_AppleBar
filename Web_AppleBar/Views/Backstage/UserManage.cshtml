@@ -28,17 +28,18 @@
                         <td class="col-4"><textarea class="w-100 h-100" style="min-height:100px">@item.Remarks</textarea></td>
                         <td class="col-1">
                             @Html.ActionLink("編輯", "UserManage_Edit",
-                           new {
-                               account=item.Account,
-                               password=item.Password,
-                               name=item.Name,
-                               phoneNum=item.PhoneNum,
-                               remarks=item.Remarks
-                           },
-                           htmlAttributes: new { @class= "btn btn-primary my-1" })
+                            new
+                            {
+                                account = item.Account,
+                            },
+                            htmlAttributes: new { @class = "btn btn-primary my-1" })
                             <!--<input class="btn btn-primary my-1" type="button" value="更新" />-->
                             <br />
-                            <input class="btn btn-danger my-1" type="button" value="刪除" />
+                            @using (Html.BeginForm("UserManage_Dele", "Backstage", FormMethod.Post))
+                            {
+                                @Html.Hidden("account", item.Account);
+                                <input class="btn btn-danger my-1" type="submit" value="刪除" />
+                            }
                         </td>
                     </tr>
                     }
@@ -50,7 +51,10 @@
                     <td class="col-2"><input type="tel" placeholder="電話" class="w-100" /></td>
                     <td class="col-4"><textarea class="w-100 h-100" style="min-height:100px" placeholder="備註"></textarea></td>
                     <td class="col-1">
-                        <input class="btn btn-primary my-1" type="button" value="新增" />
+                        @Html.ActionLink("新增", "UserManage_Creat",
+                           null,
+                           htmlAttributes: new { @class = "btn btn-primary my-1" })
+                        <!--<input class="btn btn-primary my-1" type="button" value="新增" />-->
                     </td>
                 </tr>
                 </tbody>

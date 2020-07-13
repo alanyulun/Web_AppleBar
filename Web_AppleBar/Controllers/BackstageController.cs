@@ -42,25 +42,53 @@ namespace Web_AppleBar.Controllers
             return View(Data);
         }
 
-        public ActionResult UserManage_Edit(string account, string password, string name, string phoneNum, string remarks)
+        public ActionResult UserManage_Edit(string account)
         {
-            var Data = db.BackstageUser.ToList();
-
-            return View(Data);
+            var Data = db.BackstageUser.Find(account);
+            if (Data != null)
+                return View(Data);
+            else
+            {
+                TempData["resultMsg"] = "資料有誤";
+                return RedirectToAction("UserManage", "BackStage");
+            }
         }
 
-        public ActionResult UserManage_Dele()
+        [HttpPost]
+        public ActionResult UserManage_Edit(BackstageUser postbackData)
         {
-            var Data = db.BackstageUser.ToList();
+            var Data = db.BackstageUser.Find(postbackData.Account);
 
-            return View(Data);
+            Data.Account = postbackData.Account;
+            Data.Password = postbackData.Password;
+            Data.Name = postbackData.Name;
+            Data.PhoneNum = postbackData.PhoneNum;
+            Data.Remarks = postbackData.Remarks;
+
+            db.SaveChanges();
+            return RedirectToAction("UserManage", "BackStage");
+        }
+
+        [HttpPost]
+        public ActionResult UserManage_Dele(string account)
+        {
+            var Data = db.BackstageUser.Find(account);
+            db.BackstageUser.Remove(Data);
+            db.SaveChanges();
+            return RedirectToAction("UserManage", "BackStage");
         }
 
         public ActionResult UserManage_Creat()
         {
-            var Data = db.BackstageUser.ToList();
+            return View();
+        }
 
-            return View(Data);
+        [HttpPost]
+        public ActionResult UserManage_Creat(BackstageUser postbackData)
+        {
+            db.BackstageUser.Add(postbackData);
+            db.SaveChanges();
+            return RedirectToAction("UserManage", "BackStage");
         }
         //************************************************************************
 
@@ -70,6 +98,18 @@ namespace Web_AppleBar.Controllers
             var Data = db.News.ToList();
 
             return View(Data);
+        }
+
+        public ActionResult News_Edit(string id)
+        {
+            var Data = db.BackstageUser.Find(id);
+            if (Data != null)
+                return View(Data);
+            else
+            {
+                TempData["resultMsg"] = "資料有誤";
+                return RedirectToAction("News", "BackStage");
+            }
         }
         //************************************************************************
 

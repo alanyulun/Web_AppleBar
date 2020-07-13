@@ -1,0 +1,11 @@
+Edit File
+	BackstageController
+		1. UserManage_Edit(string account)
+		2. UserManage_Edit(BackstageUser postbackData)
+		3. UserManage_Dele(string account)
+		4. UserManage_Creat(BackstageUser postbackData)
+	UserManage.cshtml
+
+Add File
+	UserManage_Edit.cshtml
+	UserManage_Creat.cshtml
